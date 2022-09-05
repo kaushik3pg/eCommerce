@@ -9,9 +9,10 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

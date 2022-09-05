@@ -1,6 +1,6 @@
 <div>
-    <mat-toolbar color="primary">
-      <mat-toolbar-row class="flex justify-between">
+    <mat-toolbar color="primary" class="py-4">
+      <!-- <mat-toolbar-row class="flex justify-between">
         <div>        <mat-icon
           aria-hidden="false"
           aria-label="Example home icon"
@@ -14,10 +14,10 @@
         >
           <mat-icon>menu</mat-icon>
         </button>
-      </mat-toolbar-row>
+      </mat-toolbar-row> -->
   
       <mat-toolbar-row class="flex justify-between">
-        <span>EMPORIUM</span>
+        <span>SHOPPRIX</span>
        
         <button
           class="example-icon"
@@ -28,9 +28,10 @@
             aria-label="Example home icon"
             fontIcon="shopping_cart"
           ></mat-icon>
-          Shopping Cart
+         
         </button>
       </mat-toolbar-row>
     </mat-toolbar>
+    <app-navbar [menu]="menuItems"></app-navbar>
   </div>
   

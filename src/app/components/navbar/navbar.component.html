@@ -2,7 +2,7 @@
     <nav class="w-full">
         <ul class="flex justify-center items-center p-4" >
 
-            <li class="mx-4" *ngFor="let item of menu"><a [routerLink]="item.route" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{item.title | uppercase}}</a></li>
+            <li class="mx-4 text-primary-text-color" *ngFor="let item of menu"><a [routerLink]="item.route" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{item.title | uppercase}}</a></li>
       
            </ul>
     </nav>

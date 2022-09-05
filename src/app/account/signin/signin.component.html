@@ -18,8 +18,8 @@
           <input matInput placeholder="Password" required />
         </mat-form-field>
         <div class="flex justify-center">
-          <button
-            type="submit"
+          <button mat-fab
+            type="submit" color="primary"
             class="flex justify-center rounded-full border border-transparent bg-indigo-600 py-4 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             <mat-icon
@@ -28,6 +28,34 @@
               fontIcon="input"
             ></mat-icon>
           </button>
+        </div>
+        <div class="flex flex-1 items-center justify-between">
+          <mat-divider class="w-1/3"></mat-divider>
+          <div class="flex justify-center items-center">
+            or Sign in with one click
+           
+          </div>
+          
+          <mat-divider class="w-1/3"></mat-divider>
+        </div>
+        <div class="flex justify-center">
+    
+            <mat-icon class="w-8 m-4"
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="info"
+            ></mat-icon>
+            <mat-icon class="w-8 m-4"
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="info"
+          ></mat-icon>
+          <mat-icon class="w-8 m-4"
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="info"
+        ></mat-icon>
+  
         </div>
       </form>
     </div>

@@ -10,9 +10,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, NavbarComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, NavbarComponent, SearchbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

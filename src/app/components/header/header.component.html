@@ -1,26 +1,11 @@
-<div>
-    <mat-toolbar color="primary" class="py-4">
-      <!-- <mat-toolbar-row class="flex justify-between">
-        <div>        <mat-icon
-          aria-hidden="false"
-          aria-label="Example home icon"
-          fontIcon="phone"
-        ></mat-icon>  <a href="tel:+91-7123298989"></a>Hotline: (+91) 7123298989</div>
-        <span class="example-spacer">Welcome to our market!</span>
+
+
+ 
+      <div class="flex xs:flex-wrap sm:flex-wrap justify-between items-center w-full py-10 xs:py-6 px-4 bg-primary-bg-color text-white">
+      <span class="font-bold text-xl text-white order-1">SHOPPRIX</span>
+      <app-searchbar class="search__wrapper order-1 xs:order-3 sm:order-3"></app-searchbar>
         <button
-          mat-icon-button
-          class="example-icon"
-          aria-label="Example icon-button with menu icon"
-        >
-          <mat-icon>menu</mat-icon>
-        </button>
-      </mat-toolbar-row> -->
-  
-      <mat-toolbar-row class="flex justify-between">
-        <span>SHOPPRIX</span>
-       
-        <button
-          class="example-icon"
+          class="example-icon order-1"
           aria-label="Example icon-button with share icon"
         >
           <mat-icon
@@ -30,8 +15,6 @@
           ></mat-icon>
          
         </button>
-      </mat-toolbar-row>
-    </mat-toolbar>
+      </div>
     <app-navbar [menu]="menuItems"></app-navbar>
-  </div>
   

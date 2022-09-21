@@ -9,23 +9,23 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDividerModule} from '@angular/material/divider';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    SigninComponent,
-    SignupComponent,
-    AccountComponent,
-  ],
+  declarations: [SigninComponent, SignupComponent, AccountComponent],
   imports: [
     CommonModule,
-    AccountRoutingModule,MatInputModule,
+    AccountRoutingModule,
+    MatInputModule,
     MatFormFieldModule,
     MatCardModule,
-    MatIconModule,MatButtonModule, MatDividerModule, ReactiveFormsModule
-  ]
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
 })
-export class AccountModule { }
+export class AccountModule {}

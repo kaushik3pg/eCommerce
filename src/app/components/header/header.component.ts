@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { menu } from 'src/app/data/menu';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  menuItems: {title:string, route: string}[] = [
-    {title: 'Home', route: '/'}, 
-    {title: 'Fashion', route: '/toBeCreateRoute1'},
-    {title: 'Jewellery', route: '/toBeCreateRoute2'},
-    {title: 'Deals', route: '/toBeCreateRoute3'},
-    {title: 'Account', route: '/account'}
-  ];
+  menuItems: {title:string, route: string}[] = menu;
   constructor() { }
 
   ngOnInit(): void {

@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

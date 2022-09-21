@@ -7,33 +7,36 @@
           Don't have an account? Sign up now!
         </h2>
       </div>
-      <form class="flex flex-col mt-8 space-y-6" action="#" method="POST">
-        <!-- <div class="matFormfield"> -->
+      <!-- <p>Form Value : {{signupForm.value | json }}</p>
+      <p>Form Status : {{signupForm.status}}</p> -->
+      <form class="flex flex-col mt-8 space-y-6" [formGroup] = "signupForm">
         <mat-form-field class="matFormfield" appearance="outline">
           <mat-label>Full Name</mat-label>
-          <input matInput placeholder="Email" required />
+          <input matInput formControlName="name" placeholder="Full Name"  />
+          <mat-error>Name should be atleast 3 characters!</mat-error>
         </mat-form-field>
-        <!-- </div> -->
-        <!-- <div class="matFormfield"> -->
+        
         <mat-form-field class="matFormfield" appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email" required />
+          <input matInput formControlName="email" placeholder="Email"  />
+          <mat-error>Email format is not proper!</mat-error>
         </mat-form-field>
-        <!-- </div>
-        <div class="matFormfield"> -->
-        <mat-form-field class="matFormfield" appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" required />
-          <mat-error *ngIf="true">"This is an error msg!"</mat-error>
-        </mat-form-field>
-        <!-- </div>
-        <div class="matFormfield"> -->
-        <mat-form-field class="matFormfield" appearance="outline">
-          <mat-label>Confirm Password</mat-label>
-          <input matInput placeholder="Confirm Password" required />
-        </mat-form-field>
-        <!-- </div> -->
-  
+      
+       
+        <div formGroupName="userPassword" class="flex flex-col w-full">
+          <mat-form-field class="matFormfield" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" placeholder="Password"  />
+            <mat-error>Password should be at atleast 8 characters!</mat-error>
+          </mat-form-field>
+          <mat-form-field class="matFormfield" appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput formControlName="confirmPassword" placeholder="Confirm Password" #confirmPassword />
+            <mat-error>Confirm Password should be at atleast 8 characters!</mat-error>
+          </mat-form-field>
+        </div>
+        
+        <mat-error *ngIf="signupForm.controls['userPassword'].errors?.['passwordsDontMatch']">Passwords do not match!</mat-error>
         <div class="flex justify-center">
           <button
           mat-fab
@@ -46,6 +49,7 @@
               fontIcon="person_add"
             ></mat-icon>
           </button>
+          <!-- {{signupForm.controls['userPassword'].errors?.['passwordsDontMatch'] | json}} -->
         </div>
       
       </form>

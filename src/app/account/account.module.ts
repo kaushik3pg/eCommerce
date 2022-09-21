@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import {MatDividerModule} from '@angular/material/divider';
     AccountRoutingModule,MatInputModule,
     MatFormFieldModule,
     MatCardModule,
-    MatIconModule,MatButtonModule, MatDividerModule
+    MatIconModule,MatButtonModule, MatDividerModule, ReactiveFormsModule
   ]
 })
 export class AccountModule { }

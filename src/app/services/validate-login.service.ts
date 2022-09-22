@@ -9,7 +9,7 @@ export class ValidateLoginService {
 
   private _loginStatus = new BehaviorSubject(false);
   private _loginStatus$ = this._loginStatus.asObservable();
-
+  
   getLoginStatus(){
     return this._loginStatus$;
   }

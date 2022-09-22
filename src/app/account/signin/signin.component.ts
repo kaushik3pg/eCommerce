@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ValidateLoginService } from 'src/app/services/validate-login.service';
 
 @Component({
   selector: 'app-signin',
@@ -10,11 +12,12 @@ export class SigninComponent implements OnInit {
     email: '',
     password: '',
   };
-  constructor() {}
+  constructor(private router: Router, private validateLogin: ValidateLoginService) {}
 
   ngOnInit(): void {}
 
   onSignin() {
-    
+    this.validateLogin.setLoginStatus(true);
+    this.router.navigate(['']);
   }
 }

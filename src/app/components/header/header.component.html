@@ -1,20 +1,31 @@
-
-
- 
-      <div class="flex xs:flex-wrap sm:flex-wrap justify-between items-center w-full py-10 xs:py-6 px-4 bg-primary-bg-color text-white">
-      <span class="font-bold text-xl text-white order-1">SHOPPRIX</span>
-      <app-searchbar class="search__wrapper order-1 xs:order-3 sm:order-3"></app-searchbar>
-        <button
-          class="example-icon order-1"
-          aria-label="Example icon-button with share icon"
-        >
-          <mat-icon
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="shopping_cart"
-          ></mat-icon>
-         
-        </button>
-      </div>
-    <app-navbar [menu]="menuItems"></app-navbar>
-  
+<div
+  class="flex xs:flex-wrap sm:flex-wrap justify-between items-center w-full py-10 xs:py-6 px-4 bg-primary-bg-color text-white"
+>
+  <span class="font-bold text-xl text-white order-1">SHOPPRIX</span>
+  <app-searchbar
+    class="search__wrapper order-1 xs:order-3 sm:order-3"
+  ></app-searchbar>
+  <div class="order-1">
+    <button
+      class="example-icon order-1 m-2"
+      aria-label="Example icon-button with share icon"
+    >
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="shopping_cart"
+      ></mat-icon>
+    </button>
+    <button
+      class="example-icon order-1 m-2"
+      aria-label="Example icon-button with share icon" *ngIf="loginDone" (click)="onSignout()"
+    >
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="logout"
+      ></mat-icon>
+    </button>
+  </div>
+</div>
+<app-navbar [menu]="menuItems"></app-navbar>

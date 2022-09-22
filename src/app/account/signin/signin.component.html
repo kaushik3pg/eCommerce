@@ -7,19 +7,21 @@
           Sign in
         </h2>
       </div>
-      <form class="flex flex-col mt-8 space-y-6" action="#" method="POST">
+      <!-- {{signinForm.status}} -->
+
+      <form class="flex flex-col mt-8 space-y-6" #signinForm="ngForm" (ngSubmit)="onSignin()">
         <mat-form-field class="matFormfield" appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput placeholder="Email" required />
+          <input matInput placeholder="Email" name="email" required email [(ngModel)]="user.email"/>
         </mat-form-field>
   
         <mat-form-field class="matFormfield" appearance="outline">
           <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" required />
+          <input type="password" matInput placeholder="Password" name="password" required  minlength="8" [(ngModel)]="user.password"/>
         </mat-form-field>
         <div class="flex justify-center">
           <button mat-fab
-            type="submit" color="primary"
+            type="submit" color="primary" [disabled]="!signinForm.valid"
             class="flex justify-center rounded-full border border-transparent bg-indigo-600 py-4 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             <mat-icon

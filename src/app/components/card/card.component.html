@@ -1,29 +1,35 @@
-<mat-card *ngFor="let product of products" class="max-w-xs m-2">
-  <div class="flex items-center justify-center">
-    <img [src]="product.imgUrl" [alt]="product.title" />
-  </div>
-  <mat-card-header class="justify-center mt-4">
-    <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
-    <mat-card-title>{{ product.title }}</mat-card-title>
-  </mat-card-header>
-  <div class="flex justify-between items-center my-6">
-    <span class="font-medium text-red-500">{{ product.price | currency }}</span>
-    <span class="font-medium text-gray-500">{{ product.ratings }} ratings</span>
-  </div>
-  <hr />
 
-  <div class="flex flex-row justify-evenly items-center text-gray-500 mt-6">
-    <button mat-mini-fab aria-label="Example home icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-mini-fab aria-label="Example home icon">
-      <mat-icon>shopping_cart</mat-icon>
-    </button>
-    <button mat-mini-fab aria-label="Example home icon">
-      <mat-icon>visibility</mat-icon>
-    </button>
-    <button mat-mini-fab aria-label="Example home icon">
-      <mat-icon>rate_review</mat-icon>
-    </button>
-  </div>
-</mat-card>
+  <mat-card *ngFor="let product of products" class="max-w-xs m-2">
+    <div class="flex items-center justify-center w-48">
+      <img [src]="product.imgUrl" [alt]="product.title" />
+    </div>
+    <mat-card-header class="justify-center mt-4">
+      <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+      <mat-card-title>{{ product.title }}</mat-card-title>
+    </mat-card-header>
+    <div class="flex justify-between items-center my-6">
+      <span class="font-medium text-red-500">{{
+        product.price | currency
+      }}</span>
+      <span class="font-medium text-gray-500"
+        >{{ product.ratings }} ratings</span
+      >
+    </div>
+    <hr />
+
+    <div class="flex flex-row justify-evenly items-center text-gray-500 mt-6">
+      <button mat-mini-fab aria-label="Example home icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-mini-fab aria-label="Example home icon">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <button mat-mini-fab aria-label="Example home icon">
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <button mat-mini-fab aria-label="Example home icon">
+        <mat-icon>rate_review</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+

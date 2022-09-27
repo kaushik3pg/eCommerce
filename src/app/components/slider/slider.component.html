@@ -1,0 +1,9 @@
+<div class="border-2 border-red-500 m-4">
+
+  <div (focus)="displayImage($event)"
+    
+  [ngStyle]="{ background: 'url(' + slides[0].imgUrl + ')', 'background-size':'cover',height: '500px'}"
+>
+    <p>{{ slides[0].heading }}</p>
+  </div>
+</div>

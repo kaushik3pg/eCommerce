@@ -12,10 +12,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, NavbarComponent, SearchbarComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavbarComponent,
+    SearchbarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

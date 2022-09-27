@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { slides } from '../data/slides';
 import { productList } from '../data/product';
+
 import { ValidateLoginService } from '../services/validate-login.service';
 
 @Component({
@@ -11,6 +13,7 @@ import { ValidateLoginService } from '../services/validate-login.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   products = productList;
+  slides = slides;
   subscription! : Subscription;
   constructor(
     private router: Router,
@@ -18,13 +21,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.subscription = this.validateLogin.getLoginStatus().subscribe((loginStatus) => {
-      console.log("Login status is : ", loginStatus);
-      !loginStatus ? this.router.navigate(['account']) : null;
-    });
+    // this.subscription = this.validateLogin.getLoginStatus().subscribe((loginStatus) => {
+    //   console.log("Login status is : ", loginStatus);
+    //   !loginStatus ? this.router.navigate(['account']) : null;
+    // });
   }
 
   ngOnDestroy(): void{
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 }

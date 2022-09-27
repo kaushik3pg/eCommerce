@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { menu } from 'src/app/data/menu';
 import { ValidateLoginService } from 'src/app/services/validate-login.service';
@@ -12,10 +13,14 @@ export class HeaderComponent implements OnInit , OnDestroy{
   menuItems: {title:string, route: string}[] = menu;
   loginDone: boolean = false;
   subscription! : Subscription;
-  constructor(private validateLogin: ValidateLoginService) { }
+  constructor(private router: Router, private validateLogin: ValidateLoginService) { }
 
   onSignout(){
     this.validateLogin.setLoginStatus(false);
+  }
+
+  onSignin(){
+    this.router.navigate(['auth']);
   }
 
   ngOnInit(): void {

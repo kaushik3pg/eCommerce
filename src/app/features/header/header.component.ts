@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit , OnDestroy{
   menuItems: {title:string, route: string}[] = menu;
   loginDone: boolean = false;
   subscription! : Subscription;
+  showSearchbar : boolean = false;
   constructor(private router: Router, private validateLogin: ValidateLoginService) { }
 
   onSignout(){
@@ -21,6 +22,10 @@ export class HeaderComponent implements OnInit , OnDestroy{
 
   onSignin(){
     this.router.navigate(['auth']);
+  }
+
+  onToggleSearchbar(){
+    this.showSearchbar = !this.showSearchbar;
   }
 
   ngOnInit(): void {

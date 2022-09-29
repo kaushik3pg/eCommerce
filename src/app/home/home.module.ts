@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
-import { CardModule } from '../components/card/card.module';
-import { SliderModule } from '../components/slider/slider.module';
+import { CardModule } from '../features/card/card.module';
+import { SliderModule } from '../features/slider/slider.module';
 
 @NgModule({
   declarations: [HomeComponent],

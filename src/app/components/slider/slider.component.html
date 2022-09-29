@@ -1,9 +1,28 @@
-<div class="border-2 border-red-500 m-4">
+<div class="m-4 rounded-lg">
 
-  <div (focus)="displayImage($event)"
-    
-  [ngStyle]="{ background: 'url(' + slides[0].imgUrl + ')', 'background-size':'cover',height: '500px'}"
+
+<div    
+[ngStyle]="{ background: 'url(' + slides[imgIndex].imgUrl + ')', 'background-size':'cover',height: '450px', 'border-radius': '0.5rem'}"
 >
-    <p>{{ slides[0].heading }}</p>
+   
+    <div class="h-full bg-black bg-opacity-50 p-4 rounded-lg">
+      <div class="h-full flex justify-between items-center">
+        <button class="bg-black bg-opacity-10 text-white rounded-full h-20 w-20 " (click)="showPreviousSlide()">
+          <mat-icon aria-hidden="false" 
+            >arrow_back_ios</mat-icon
+          >
+        </button>
+        <div class="flex flex-col flex-grow justify-center items-center text-white h-full">
+          <p class="text-6xl font-extrabold">{{slides[imgIndex].heading | uppercase}}</p>
+          <p class="text-2xl">{{slides[imgIndex].subHeading }}</p>
+          <button mat-button class="bg-white text-black">Shop Now</button>
+        </div>
+        <button class="bg-black bg-opacity-10 text-white rounded-full h-20 w-20" (click)="showNextSlide()">
+          <mat-icon aria-hidden="false" 
+            >arrow_forward_ios</mat-icon
+          >
+        </button>
+      </div>
+     </div>
   </div>
 </div>

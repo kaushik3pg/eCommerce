@@ -1,0 +1,19 @@
+<!-- <div class="w-full bg-white border-b-2 font-medium"  *ngIf="loginDone"> -->
+    <div class="w-full font-medium">
+        <nav class="w-full">
+          <ul class="flex justify-center items-center ">
+            <li
+              class="mx-1 xs:m-0"
+              *ngFor="let item of menu"
+            >
+              <a  mat-button class="bg-transparent"
+                [routerLink]="item.route"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true}"
+                >{{ item.title | uppercase }}</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      

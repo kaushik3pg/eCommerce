@@ -6,13 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
- @Input() products: {
+  @Input() products: {
+    id: number;
     imgUrl: string;
     category: string;
     title: string;
     price: number;
     ratings: number;
-  }[]= [];
+  }[] = [];
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,5 +1,6 @@
 export const productList = [
   {
+    id: 1,
     imgUrl: 'assets/images/1-medium.png',
     category: 'Electronics',
     title: 'Keyboard',
@@ -7,6 +8,7 @@ export const productList = [
     ratings: 56,
   },
   {
+    id: 2,
     imgUrl: 'assets/images/2-medium.png',
     category: 'Electronics',
     title: 'PC All-in-one',
@@ -14,6 +16,7 @@ export const productList = [
     ratings: 12,
   },
   {
+    id: 3,
     imgUrl: 'assets/images/3-medium.png',
     category: 'Electronics',
     title: 'Headset',
@@ -21,6 +24,7 @@ export const productList = [
     ratings: 34,
   },
   {
+    id: 4,
     imgUrl: 'assets/images/4-medium.png',
     category: 'Electronics',
     title: 'Probook',
@@ -28,6 +32,7 @@ export const productList = [
     ratings: 6,
   },
   {
+    id: 5,
     imgUrl: 'assets/images/5-medium.png',
     category: 'Electronics',
     title: 'Phone',
@@ -35,6 +40,7 @@ export const productList = [
     ratings: 23,
   },
   {
+    id: 6,
     imgUrl: 'assets/images/6-medium.png',
     category: 'Electronics',
     title: 'All-in-one Printer',

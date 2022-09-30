@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { slides } from '../../data/slides';
-import { productList } from '../../data/product';
+import { productList } from '../../data/products';
 
 import { ValidateLoginService } from '../../services/validate-login.service';
 

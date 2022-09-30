@@ -33,7 +33,7 @@ const routes: Routes = [
       import('./modules/payment/payment.module').then((m) => m.PaymentModule),
   },
   {
-    path: 'product',
+    path: 'product/:id',
     loadChildren: () =>
       import('./modules/product/product.module').then((m) => m.ProductModule),
   },

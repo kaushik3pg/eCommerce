@@ -4,14 +4,48 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'auth',
+    path: '',
     loadChildren: () =>
-      import('./account/account.module').then((m) => m.AccountModule),
+      import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: '',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
-    // canActivate: [AuthGuard],
+    path: 'profile',
+    loadChildren: () =>
+      import('./modules/profile/profile.module').then((m) => m.ProfileModule),
+  },
+  {
+    path: 'wishlist',
+    loadChildren: () =>
+      import('./modules/wishlist/wishlist.module').then(
+        (m) => m.WishlistModule
+      ),
+  },
+  {
+    path: 'cart',
+    loadChildren: () =>
+      import('./modules/shopping-cart/shopping-cart.module').then(
+        (m) => m.ShoppingCartModule
+      ),
+  },
+  {
+    path: 'payment',
+    loadChildren: () =>
+      import('./modules/payment/payment.module').then((m) => m.PaymentModule),
+  },
+  {
+    path: 'product',
+    loadChildren: () =>
+      import('./modules/product/product.module').then((m) => m.ProductModule),
+  },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'orders',
+    loadChildren: () =>
+      import('./modules/orders/orders.module').then((m) => m.OrdersModule),
   },
   {
     path: '**',

@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { slides } from '../data/slides';
-import { productList } from '../data/product';
+import { slides } from '../../data/slides';
+import { productList } from '../../data/product';
 
-import { ValidateLoginService } from '../services/validate-login.service';
+import { ValidateLoginService } from '../../services/validate-login.service';
 
 @Component({
   selector: 'app-home',

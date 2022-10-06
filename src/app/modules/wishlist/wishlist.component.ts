@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { productList } from 'src/app/data/products';
 
 @Component({
   selector: 'app-wishlist',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wishlist.component.css']
 })
 export class WishlistComponent implements OnInit {
-
+  products = productList;
   constructor() { }
 
   ngOnInit(): void {

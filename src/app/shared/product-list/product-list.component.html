@@ -1,0 +1,20 @@
+<ul class="flex flex-col m-2">
+    <li *ngFor="let product of products">
+      <mat-divider></mat-divider>
+      <div class="flex flex-row xs:flex-col sm:flex-col justify-between items-center p-6">
+        <div class="max-h-28 flex items-center justify-center">
+          <img class="h-28" [src]="product.imgUrl" alt="" />
+        </div>
+        <div class="flex flex-col items-center">
+          <h1>{{ product.title }}</h1>
+        </div>
+        <div class="flex flex-col items-center">
+          <p>{{info}}24 July 2022</p>
+        </div>
+        <div class="flex flex-col justify-evenly h-28">
+          <button mat-raised-button class="m-2" *ngFor="let btn of buttons">{{btn}}</button>
+          <!-- <button mat-raised-button class="m-2">{{buttons[1]}}</button> -->
+        </div>
+      </div>
+    </li>
+  </ul>

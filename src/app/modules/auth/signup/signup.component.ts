@@ -13,13 +13,6 @@ const matchPassword = (): ValidatorFn => {
   return (control: AbstractControl): ValidationErrors | null => {
     const { password, confirmPassword } = control.value;
     return password !== confirmPassword ? { passwordsDontMatch: true } : null;
-    // if (password !== confirmPassword) {
-    //   console.log(control);
-    //   control.get('confirmPassword')?.setErrors({ invalid: true });
-    //   return { passwordsDontMatch: true };
-    // } else {
-    //   return null;
-    // }
   };
 };
 @Component({

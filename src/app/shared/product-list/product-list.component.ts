@@ -12,7 +12,8 @@ export class ProductListComponent implements OnInit {
   category: string;
   title: string;
   price: number;
-  ratings: number;
+  reviews:number,
+  avgrating: number,
 }[] = [];
 
 @Input() buttons: string[] = [];

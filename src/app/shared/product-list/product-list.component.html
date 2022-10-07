@@ -1,15 +1,15 @@
 <ul class="flex flex-col m-2">
-    <li *ngFor="let product of products">
-      <mat-divider></mat-divider>
+    <li *ngFor="let product of products; index as i">
+      <mat-divider *ngIf="i !== 0 "></mat-divider>
       <div class="flex flex-row xs:flex-col sm:flex-col justify-between items-center p-6">
-        <div class="max-h-28 flex items-center justify-center">
+        <div class="max-h-28 flex items-center justify-center  p-2 rounded shadow-md">
           <img class="h-28" [src]="product.imgUrl" alt="" />
         </div>
         <div class="flex flex-col items-center">
-          <h1>{{ product.title }}</h1>
+          <h2>{{ product.title }}<span class="text-sm">({{product.category}})</span></h2>
         </div>
         <div class="flex flex-col items-center">
-          <p>{{info}}24 July 2022</p>
+          <p><em>{{info}}</em>24 July 2022</p>
         </div>
         <div class="flex flex-col justify-evenly h-28">
           <button mat-raised-button class="m-2" *ngFor="let btn of buttons">{{btn}}</button>

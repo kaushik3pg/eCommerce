@@ -1,1 +1,52 @@
-<p>shopping-cart works!</p>
+<div class="flex flex-col justify-center items-center m-4 w-full">
+  <h1>Cart Summary</h1>
+
+  <ul
+    class="flex flex-col m-2 w-2/3 self-start xs:self-center sm:self-center border-2 border-black-100"
+  >
+    <li *ngFor="let item of cartItems; index as i">
+      <mat-divider *ngIf="i !== 0"></mat-divider>
+      <div class="flex flex-row xs:flex-col sm:flex-col items-center p-4">
+        <div
+          class="max-h-40 flex items-center justify-start p-2 rounded shadow-md"
+        >
+          <img class="h-40 p-2" [src]="item.imgUrl" alt="" />
+        </div>
+        <div
+          class="h-40 flex flex-col flex-grow justify-between mx-4 items-center"
+        >
+          <div class="flex flex-col justify-center items-center">
+            <h2>
+              {{ item.title }}
+              <span class="text-sm">({{ item.category }})</span>
+            </h2>
+          </div>
+          <div class="flex flex-col justify-center items-center">
+            <h2>
+              <span class="text-sm"
+                >{{ item.price | currency }} * {{ item.quantity }} = </span
+              >{{ item.price * item.quantity | currency }}
+            </h2>
+          </div>
+          <div class="flex sm:flex-col xs:flex-col items-center justify-between w-full">
+            <div class="flex flex-row justify-center items-center">
+              Qty: {{ min
+              }}<mat-slider
+                [max]="max"
+                [min]="min"
+                [step]="step"
+                [(ngModel)]="item.quantity"
+                (change)="onSlider(i, item.quantity)"
+              ></mat-slider
+              >{{ max }}
+            </div>
+            <div class="flex items-center justify-center">
+              <button class="m-2 underline">Remove item</button>
+              <button class="m-2 underline">Move to wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

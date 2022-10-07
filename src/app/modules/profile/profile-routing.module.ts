@@ -7,6 +7,7 @@ const routes: Routes = [
     path: '',
     component: ProfileComponent,
     children: [
+      { path: '', redirectTo: 'edit-profile', pathMatch: 'full' },
       {
         path: 'edit-profile',
         loadChildren: () =>

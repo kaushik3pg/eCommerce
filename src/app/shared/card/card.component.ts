@@ -12,7 +12,8 @@ export class CardComponent implements OnInit {
     category: string;
     title: string;
     price: number;
-    ratings: number;
+    reviews:number,
+    avgrating: number,
   }[] = [];
   constructor() {}
 

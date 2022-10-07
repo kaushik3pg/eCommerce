@@ -5,7 +5,8 @@ export const productList = [
     category: 'Electronics',
     title: 'Keyboard',
     price: 132,
-    ratings: 56,
+    reviews:78,
+    avgrating: 3.5,
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const productList = [
     category: 'Electronics',
     title: 'PC All-in-one',
     price: 1832,
-    ratings: 12,
+    reviews:78,
+    avgrating: 3.5,
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ export const productList = [
     category: 'Electronics',
     title: 'Headset',
     price: 32,
-    ratings: 34,
+    reviews:78,
+    avgrating: 3.5,
   },
   {
     id: 4,
@@ -29,7 +32,8 @@ export const productList = [
     category: 'Electronics',
     title: 'Probook',
     price: 1232,
-    ratings: 6,
+    reviews:78,
+    avgrating: 3.5,
   },
   {
     id: 5,
@@ -37,7 +41,8 @@ export const productList = [
     category: 'Electronics',
     title: 'Phone',
     price: 332,
-    ratings: 23,
+    reviews:78,
+    avgrating: 3.5,
   },
   {
     id: 6,
@@ -45,6 +50,7 @@ export const productList = [
     category: 'Electronics',
     title: 'All-in-one Printer',
     price: 432,
-    ratings: 3,
+    reviews:78,
+    avgrating: 3.5,
   },
 ];

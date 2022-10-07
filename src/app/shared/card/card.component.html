@@ -1,0 +1,47 @@
+<mat-card *ngFor="let product of products" class="card__link max-w-xs m-2" [routerLink]="['product/', product.id]">
+
+    <mat-card-header class="justify-center items-center text-center">
+      <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+      <mat-card-title>{{ product.title }}</mat-card-title>
+    </mat-card-header>
+    <div class="flex items-center justify-center">
+      <img [src]="product.imgUrl" [alt]="product.title" />
+    </div>
+
+    <div class="flex flex-row justify-between items-center my-4">
+      <!-- <div class="border-2 border-blue-400"> -->
+      <p class="font-medium text-red-500">{{ product.price | currency }}</p>
+      <!-- </div> -->
+
+      <!-- <span class="font-medium text-gray-500"
+        >{{ product.ratings }} ratings</span
+      > -->
+      <!-- <div class="flex justify-evenly items-center text-gray-500 border-2 border-green-400"> -->
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item mat-mini-fab aria-label="Example home icon">
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >favorite_border</mat-icon
+          >
+          Mark as favorite
+        </button>
+        <button mat-menu-item mat-mini-fab aria-label="Example home icon">
+          <mat-icon>shopping_cart</mat-icon> Add to cart
+        </button>
+        <button mat-menu-item mat-mini-fab aria-label="Example home icon">
+          <mat-icon>visibility</mat-icon> View ratings
+        </button>
+        <button mat-menu-item mat-mini-fab aria-label="Example home icon">
+          <mat-icon>rate_review</mat-icon> Write a review
+        </button>
+      </mat-menu>
+      <!-- </div> -->
+    </div>
+
+</mat-card>

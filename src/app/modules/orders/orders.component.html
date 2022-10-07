@@ -1,0 +1,9 @@
+<div class="flex flex-col justify-center items-center m-4">
+  <h1>Order History</h1>
+  <app-product-list
+    class="w-full"
+    [products]="products"
+    [buttons]="['Reorder', 'Write a review']"
+    [info]="'Item ordered on '"
+  ></app-product-list>
+</div>

@@ -1,0 +1,60 @@
+<div
+  class="flex xs:flex-wrap sm:flex-wrap justify-between items-center w-full py-4 xs:py-6 px-4 bg-primary-bg-color text-white"
+>
+  <!-- brand image logo -->
+  <a routerLink="" class="font-bold text-xl text-white order-1"
+    ><img class="w-40" src="assets/images/brand/shopprix.svg" alt="brand-logo"
+  /></a>
+
+  <!-- navbar  -->
+  <app-navbar
+    [menu]="menuItems"
+    class="order-1 xs:order-3 sm:order-3"
+  ></app-navbar>
+
+  <!-- user action buttons -->
+  <div class="order-1 flex flex-row">
+    <button class="example-icon order-1 m-2" (click)="onToggleSearchbar()">
+      <mat-icon aria-hidden="false" fontIcon="search"></mat-icon>
+    </button>
+    <button class="example-icon order-1 m-2" (click)="onUserPageLaunch('cart')">
+      <mat-icon aria-hidden="false" fontIcon="shopping_cart"></mat-icon>
+    </button>
+    <div class="order-1 m-2">
+      <button class="example-icon" [matMenuTriggerFor]="menu">
+        <mat-icon aria-hidden="false" fontIcon="account_circle"></mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onUserPageLaunch('profile')">
+          <mat-icon aria-hidden="false" fontIcon="person"></mat-icon>
+          Profile
+        </button>
+        <button mat-menu-item (click)="onUserPageLaunch('wishlist')">
+          <mat-icon aria-hidden="false" fontIcon="favorite"></mat-icon>
+          Wishlist
+        </button>
+        <button mat-menu-item (click)="onUserPageLaunch('orders')">
+          <mat-icon aria-hidden="false" fontIcon="redeem"></mat-icon>
+          Orders
+        </button>
+        <button mat-menu-item *ngIf="loginDone" (click)="onSignout()">
+          <mat-icon aria-hidden="false" fontIcon="logout"></mat-icon>
+          Signout
+        </button>
+        <button mat-menu-item *ngIf="!loginDone" (click)="onSignin()">
+          <mat-icon aria-hidden="false" fontIcon="login"></mat-icon>
+          Signin
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</div>
+
+<!-- end of header -->
+
+<!-- searchbar(appears on click of search icon in header) -->
+<app-searchbar
+  class="search__wrapper flex justify-end"
+  *ngIf="showSearchbar"
+  @fadeInOut
+></app-searchbar>

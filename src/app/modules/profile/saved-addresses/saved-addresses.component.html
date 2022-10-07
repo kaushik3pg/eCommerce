@@ -1,0 +1,18 @@
+<div class="flex flex-grow flex-wrap justify-between w-full">
+
+<mat-card class="m-4 max-w-sm" *ngFor="let address of addresses; index as i">
+  
+  <mat-card-subtitle
+    >Address {{ i + 1 }}</mat-card-subtitle
+  ><mat-card-title>{{ address.house }}, {{ address.street }}</mat-card-title>
+  <mat-card-content>
+    <p>{{ address.area }}, {{ address.city }}</p>
+    <p>{{ address.state }}, pincode : {{ address.pincode }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Delete</button>
+    <button mat-button>Edit</button>
+  </mat-card-actions>
+</mat-card>
+
+</div>

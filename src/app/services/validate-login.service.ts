@@ -15,6 +15,6 @@ export class ValidateLoginService {
   }
 
   setLoginStatus(currentLoginStatus: boolean){
-    return this._loginStatus.next(currentLoginStatus)
+    return this._loginStatus.next(currentLoginStatus);
   }
 }

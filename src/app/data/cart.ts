@@ -1,0 +1,32 @@
+export const shoppingCart = [
+  {
+    id: 1,
+    imgUrl: 'assets/images/1-medium.png',
+    category: 'Electronics',
+    title: 'Keyboard',
+    price: 132,
+    reviews: 78,
+    avgrating: 3.5,
+    quantity: 3,
+  },
+  {
+    id: 2,
+    imgUrl: 'assets/images/2-medium.png',
+    category: 'Electronics',
+    title: 'PC All-in-one',
+    price: 1832,
+    reviews: 78,
+    avgrating: 3.5,
+    quantity: 5,
+  },
+  {
+    id: 3,
+    imgUrl: 'assets/images/3-medium.png',
+    category: 'Electronics',
+    title: 'Headset',
+    price: 32,
+    reviews: 78,
+    avgrating: 3.5,
+    quantity: 1,
+  },
+];

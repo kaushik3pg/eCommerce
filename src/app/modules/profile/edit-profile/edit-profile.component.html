@@ -1,0 +1,106 @@
+<div class="flex flex-col justify-center items-center">
+    
+  <form
+    class="flex flex-row justify-center items-center mt-4"
+    #nameForm="ngForm" (ngSubmit)="onChangeName()"
+  >
+    <mat-form-field class="h-full" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Name"
+        name="name"
+        [(ngModel)]="name"
+      />
+    </mat-form-field>
+    <div class="flex flex-col mx-2">
+      <button
+        mat-raised-button
+        type="submit"
+        [disabled]="!nameForm.valid"
+        
+      >
+        Change
+      </button>
+    </div>
+  </form>
+
+  <form
+  class="flex flex-row justify-center items-center mt-4"
+  #birthdayForm="ngForm" 
+>
+  <mat-form-field class="h-full" appearance="outline">
+    <mat-label>Birthday</mat-label>
+    <input
+      matInput
+      type="date"
+      placeholder="Birthday"
+      name="birthday"
+      [(ngModel)]="birthday"
+    />
+  </mat-form-field>
+  <div class="flex flex-col mx-2">
+    <button
+      mat-raised-button
+      type="submit"
+      [disabled]="!birthdayForm.valid"
+    >
+      Change
+    </button>
+  </div>
+</form>
+
+<form
+class="flex flex-row justify-center items-center mt-4"
+#mobileForm="ngForm" (ngSubmit)="onChangeMobile()"
+>
+<mat-form-field class="h-full" appearance="outline">
+  <mat-label>Mobile.No</mat-label>
+  <input
+    matInput
+    type="text"
+    placeholder="Mobile No."
+    name="mobile"
+    [(ngModel)]="mobile"
+  />
+</mat-form-field>
+<div class="flex flex-col mx-2">
+  <button
+    mat-raised-button
+    type="submit"
+    [disabled]="!mobileForm.valid"
+
+  >
+    Change
+  </button>
+</div>
+</form>
+
+<form
+class="flex flex-row justify-center items-center mt-4"
+#birthdayForm="ngForm"(ngSubmit)="onChangeBirthday()"
+>
+<mat-form-field class="h-full" appearance="outline">
+  <mat-label>Birthday</mat-label>
+  <input
+    matInput
+    type="date"
+    placeholder="Birthday"
+    name="birthday"
+    [(ngModel)]="birthday"
+  />
+</mat-form-field>
+<div class="flex flex-col mx-2">
+  <button
+    mat-raised-button
+    type="submit"
+    [disabled]="!birthdayForm.valid"
+
+  >
+    Change
+  </button>
+</div>
+</form>
+
+</div>

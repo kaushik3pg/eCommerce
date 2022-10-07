@@ -1,0 +1,40 @@
+<div class="flex flex-col justify-center items-center m-4">
+  <h1>Hi, {{ userInfo.name }}</h1>
+  <div class="flex justify-between items-center w-full">
+    <p
+      class="flex justify-center items-center p-2 "
+    >
+      Birthday
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="celebration"
+      ></mat-icon
+      >    {{ userInfo.dob }}
+    </p>
+    <p
+      class="flex justify-center items-center"
+    >
+      Joined  <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="portrait"
+    ></mat-icon
+    > {{ userInfo.memberSince }}
+    </p>
+  </div>
+
+  <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+    <a
+      mat-tab-link
+      *ngFor="let link of links; index as i"
+      [routerLink]="link"
+      (click)="activeLink = link"
+      [active]="activeLink == link"
+      >{{ tabTitles[i] }}</a
+    >
+  </nav>
+  <mat-tab-nav-panel #tabPanel
+    ><router-outlet></router-outlet
+  ></mat-tab-nav-panel>
+</div>

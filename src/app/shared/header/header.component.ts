@@ -5,7 +5,7 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { menu } from 'src/app/data/menu';
@@ -40,12 +40,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.navigate(['auth']);
   }
 
-  onToggleSearchbar() {
+  onToggleSearchbar(event: any) {
+    event.stopPropagation();
     this.showSearchbar = !this.showSearchbar;
   }
 
   onUserPageLaunch(showPage: string){
     this.router.navigate([showPage]);
+  }
+
+  @HostListener('window:click', ['$event'])
+   handleOutsideClick(event: any) {
+    event.stopPropagation();
+    this.showSearchbar = false;
   }
 
   ngOnInit(): void {

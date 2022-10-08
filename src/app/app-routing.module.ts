@@ -36,7 +36,7 @@ const routes: Routes = [
   {
     path: 'product/:id',
     loadChildren: () =>
-      import('./modules/product/product.module').then((m) => m.ProductModule),
+      import('./modules/product-details/product-details.module').then((m) => m.ProductDetailsModule),
   },
   {
     path: 'auth',

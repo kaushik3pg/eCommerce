@@ -49,6 +49,11 @@ const routes: Routes = [
       import('./modules/orders/orders.module').then((m) => m.OrdersModule),
   },
   {
+    path: 'search-results',
+    loadChildren: () =>
+      import('./modules/search-results/search-results.module').then((m) => m.SearchResultsModule),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

@@ -1,13 +1,13 @@
 .card__link{
     cursor: pointer;
-    width: 250px;
+    width: 200px;
 }
 .card__link:hover {
     animation: hover ;
     border: 3px solid #eee;
     border-radius: 1em;
     /* transform: scale(1.1); */
-    box-shadow: 5px 5px 5px #aaa;
+    box-shadow: 5px 5px 5px var(--primary-bg-color);
     /* background-color: red; */
     z-index: 999;
     animation-duration: 0.5s;
@@ -23,6 +23,6 @@
     
       100% {
         /* transform: scale(1.1); */
-        box-shadow: 5px 5px 5px #aaa;
+        box-shadow: 5px 5px 5px var(--primary-bg-color);
       }
 }

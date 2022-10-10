@@ -32,7 +32,7 @@
               <div
                 class="flex sm:flex-col xs:flex-col items-center justify-between w-full"
               >
-                <div class="flex flex-row justify-center items-center">
+                <div class="flex flex-row justify-center items-center px-2 shadow rounded border-2 border-black-100">
                   Qty: {{ min
                   }}<mat-slider
                     [max]="max"
@@ -43,9 +43,9 @@
                   ></mat-slider
                   >{{ max }}
                 </div>
-                <div class="flex items-center justify-evenly">
-                  <button class="underline">Remove item</button>
-                  <button class="underline">Move to wishlist</button>
+                <div class="flex items-center justify-between p-4 ">
+                  <button class="underline m-2">Remove item</button>
+                  <button class="underline m-2">Move to wishlist</button>
                 </div>
               </div>
             </div>

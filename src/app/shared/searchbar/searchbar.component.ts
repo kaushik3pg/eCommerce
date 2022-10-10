@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { productCategories } from 'src/app/data/product-categories';
 
 
@@ -11,9 +12,11 @@ import { productCategories } from 'src/app/data/product-categories';
 export class SearchbarComponent implements OnInit {
   
   categories = productCategories;
-  constructor() {}
+  constructor(private router: Router) {}
 
-  onSearch() {}
+  onSearch() {
+    this.router.navigate(['search-results']);
+  }
 
 
 

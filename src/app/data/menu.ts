@@ -1,7 +1,7 @@
 export const menu = [
   { title: 'Home', route: '/' },
-  { title: 'Fashion', route: '/toBeCreateRoute1' },
-  { title: 'Jewellery', route: '/toBeCreateRoute2' },
-  { title: 'Deals', route: '/toBeCreateRoute3' },
+  { title: 'Electronics', route: '/toBeCreatedRoute1' },
+  { title: 'Decor', route: '/toBeCreatedRoute2' },
+  { title: 'Deals', route: '/toBeCreatedRoute3' },
   // { title: 'Account', route: '/account' },
 ];

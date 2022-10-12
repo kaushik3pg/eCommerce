@@ -6,10 +6,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { SearchbarModule } from '../searchbar/searchbar.module';
 import { RouterModule } from '@angular/router';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [HeaderComponent],
-  imports: [CommonModule, NavbarModule, MatIconModule, MatMenuModule, SearchbarModule, RouterModule],
+  imports: [CommonModule, NavbarModule, MatIconModule, MatMenuModule, SearchbarModule, RouterModule, MatBadgeModule],
   exports: [HeaderComponent],
 })
 export class HeaderModule {}

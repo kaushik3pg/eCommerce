@@ -1,24 +1,28 @@
 .card__link{
     cursor: pointer;
+    width: 200px;
 }
 .card__link:hover {
     animation: hover ;
     border: 3px solid #eee;
-    border-radius: 2em;
-    transform: scale(1.1);
-    background-color: red;
+    border-radius: 1em;
+    /* transform: scale(1.1); */
+    box-shadow: 5px 5px 5px var(--primary-bg-color);
+    /* background-color: red; */
     z-index: 999;
-    animation-duration: 1.25s;
+    animation-duration: 0.5s;
     animation-name: hover;
     animation-timing-function: ease-in-out;
 }
 
 @keyframes hover {
     0% {
-        transform: scale(1);
+        /* transform: scale(1); */
+        box-shadow: none;
       }
     
       100% {
-        transform: scale(1.1);
+        /* transform: scale(1.1); */
+        box-shadow: 5px 5px 5px var(--primary-bg-color);
       }
 }

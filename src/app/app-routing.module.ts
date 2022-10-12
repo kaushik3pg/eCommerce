@@ -36,7 +36,7 @@ const routes: Routes = [
   {
     path: 'product/:id',
     loadChildren: () =>
-      import('./modules/product/product.module').then((m) => m.ProductModule),
+      import('./modules/product-details/product-details.module').then((m) => m.ProductDetailsModule),
   },
   {
     path: 'auth',
@@ -47,6 +47,11 @@ const routes: Routes = [
     path: 'orders',
     loadChildren: () =>
       import('./modules/orders/orders.module').then((m) => m.OrdersModule),
+  },
+  {
+    path: 'search-results',
+    loadChildren: () =>
+      import('./modules/search-results/search-results.module').then((m) => m.SearchResultsModule),
   },
   {
     path: '**',

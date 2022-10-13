@@ -1,6 +1,6 @@
 <div class="flex flex-col justify-center items-center p-4 w-full">
   <h1>Cart Summary</h1>
-  <div class="flex flex-row w-full" *ngIf="cartItems.length > 0">
+  <div class="flex flex-row w-full" *ngIf="cartItems.length">
     <div
       class="flex flex-col m-2 w-2/3 self-start xs:self-center sm:self-center border-2 border-black-100"
     >
@@ -26,7 +26,7 @@
                 <h2>
                   <span class="text-sm"
                     >{{ item.price | currency }} * {{ item.quantity }} = </span
-                  >{{ item.price * item.quantity | currency }}
+                  >{{ item.price*item.quantity | currency }}
                 </h2>
               </div>
               <div
@@ -44,7 +44,7 @@
                   >{{ max }}
                 </div>
                 <div class="flex items-center justify-between p-4 ">
-                  <button class="underline m-2">Remove item</button>
+                  <button class="underline m-2" (click)="onRemoveItemFromCart(item.id)">Remove item</button>
                   <button class="underline m-2">Move to wishlist</button>
                 </div>
               </div>
@@ -55,14 +55,14 @@
     </div>
     <div class="flex flex-col flex-grow justify-start items-center">
       <div class="flex flex-col justify-start items-center w-full">
-        <h1>Total amount to be paid : {{ totalAmount | currency }}</h1>
+        <h1>Total amount to be paid : {{ calculateTotalAmount() | currency }}</h1>
         <button mat-raised-button color="primary" class="w-full">
           Proceed to pay
         </button>
       </div>
     </div>
   </div>
-<div class="flex flex-col justify-center items-center mt-36" *ngIf="cartItems.length === 0 ">
+<div class="flex flex-col justify-center items-center mt-36" *ngIf="!cartItems.length">
     <p >Your shopping cart is empty!</p>
     <button mat-raised-button color="primary" (click)="onContinueShopping()">Continue shopping</button>
 </div>

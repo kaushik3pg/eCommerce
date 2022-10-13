@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from './shared/header/header.module';
 import { FooterModule } from './shared/footer/footer.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { FooterModule } from './shared/footer/footer.module';
     BrowserAnimationsModule,
     HeaderModule,
     FooterModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AddToCartService } from 'src/app/services/add-to-cart.service';
 import { shoppingCart } from '../../data/cart';
+
+
+export interface CartItem {
+  id: number;
+  imgUrl: string;
+  category: string;
+  title: string;
+  price: number;
+  reviews: number;
+  avgrating: number;
+  quantity: number;
+}
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.css'],
 })
 export class ShoppingCartComponent implements OnInit {
-  cartItems: {
-    id: number;
-    imgUrl: string;
-    category: string;
-    title: string;
-    price: number;
-    reviews: number;
-    avgrating: number;
-    quantity: number;
-  }[] = shoppingCart;
+  cartItems: CartItem[] = [];
   
   max = 10;
   min = 1;
@@ -24,25 +28,37 @@ export class ShoppingCartComponent implements OnInit {
   thumbLabel = '';
   tickInterval = 0;
   quantityPurchased = 0;
-  totalAmount: number = 0;
-  constructor(private router : Router) {}
 
-  onSlider(index: number, item: any) {
-    this.cartItems[index].quantity = item;
-    this.totalAmount = 0;
+  totalAmount: number = 0;
+
+  constructor(private router : Router, private cartStore : AddToCartService) {}
+
+  onSlider(index: number, qty: number) {
+    this.cartItems[index].quantity = qty;
     this.calculateTotalAmount();
-    console.log(this.totalAmount);
   }
 
   calculateTotalAmount() {
-    this.cartItems.forEach((item) => {
-      this.totalAmount += item.quantity * item.price;
-    });
+    let total = 0;
+    this.cartItems.forEach((item : CartItem) => {
+      total += item.quantity * item.price;
+      });
+      return total;
   }
+
   onContinueShopping(){
     this.router.navigate(['home']);
   }
-  ngOnInit(): void {
-    this.calculateTotalAmount();
+
+  onRemoveItemFromCart(index : number){
+    this.cartStore.updateCartStore(index);
   }
+
+  ngOnInit(): void {
+  this.totalAmount = this.calculateTotalAmount();
+  this.cartStore.getCartStore().subscribe(currentCart => {
+    this.cartItems = currentCart;
+  });
+}
+
 }

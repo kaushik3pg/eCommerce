@@ -57,7 +57,7 @@ export class ProductDetailsComponent implements OnInit {
       (product) => product.id === this.productId
     )[0];
 
-    this.cartStore.getCartStore().subscribe((cart: any) => {
+    this.cartStore.getCartStore().subscribe((cart: CartItem[]) => {
       this.currentCart = cart;
     });
   }

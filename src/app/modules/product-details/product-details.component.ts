@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { productList } from 'src/app/data/products';
 import { AddToCartService } from 'src/app/services/add-to-cart.service';
+import { AddToWishlistService } from 'src/app/services/add-to-wishlist.service';
 
 interface CartItem {
   id: number;
@@ -36,12 +37,13 @@ export class ProductDetailsComponent implements OnInit {
   tickInterval = 0;
 
   productId: number = 0;
-  productAlreadyInCart = false;
-  currentCart: CartItem[] = [];
+  // productAlreadyInCart = false;
+  // currentCart: CartItem[] = [];
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private cartStore: AddToCartService
+    private cartStore: AddToCartService,
+    private wishStore: AddToWishlistService
   ) {}
   onSlider() {}
 
@@ -51,14 +53,17 @@ export class ProductDetailsComponent implements OnInit {
   onAddToCart() {
     this.cartStore.setCartStore({ ...this.product, quantity: this.quantity });
   }
+  onAddToWishlist(){
+    this.wishStore.setWishStore({...this.product})
+  }
   ngOnInit(): void {
     this.productId = Number(this.route.snapshot.paramMap.get('id'));
     this.product = productList.filter(
       (product) => product.id === this.productId
     )[0];
 
-    this.cartStore.getCartStore().subscribe((cart: CartItem[]) => {
-      this.currentCart = cart;
-    });
+    // this.cartStore.getCartStore().subscribe((cart: CartItem[]) => {
+    //   this.currentCart = cart;
+    // });
   }
 }

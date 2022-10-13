@@ -18,13 +18,13 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item mat-mini-fab aria-label="Example home icon">
+        <button mat-menu-item mat-mini-fab aria-label="Example home icon" (click)="onAddToWishlist(product)">
           <mat-icon aria-hidden="false" aria-label="Example home icon"
             >favorite_border</mat-icon
           >
           Mark as favorite
         </button>
-        <button mat-menu-item mat-mini-fab aria-label="Example home icon">
+        <button mat-menu-item mat-mini-fab aria-label="Example home icon" (click)="onAddToCart(product)">
           <mat-icon>shopping_cart</mat-icon> Add to cart
         </button>
         <button mat-menu-item mat-mini-fab aria-label="Example home icon">

@@ -20,6 +20,7 @@ interface Item {
 })
 export class CardComponent implements OnInit {
   @Input() products: Item[] = [];
+  wishlist : Item[] = [];
   constructor(
     private cartStore: AddToCartService,
     private wishStore: AddToWishlistService
@@ -33,5 +34,13 @@ export class CardComponent implements OnInit {
     this.wishStore.setWishStore({ ...item });
   }
 
-  ngOnInit(): void {}
+  onCheckProductExistInWishlist(id: number){
+    return this.wishlist.filter(item => item.id === id).length ? true : false;
+  }
+
+  ngOnInit(): void {
+    this.wishStore.getWishStore().subscribe(currentWishlist => {
+      this.wishlist = currentWishlist;
+    });
+  }
 }

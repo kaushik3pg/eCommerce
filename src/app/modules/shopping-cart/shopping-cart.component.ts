@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddToCartService } from 'src/app/services/add-to-cart.service';
+import { AddToWishlistService } from 'src/app/services/add-to-wishlist.service';
 import { shoppingCart } from '../../data/cart';
-
 
 export interface CartItem {
   id: number;
@@ -21,7 +21,7 @@ export interface CartItem {
 })
 export class ShoppingCartComponent implements OnInit {
   cartItems: CartItem[] = [];
-  
+
   max = 10;
   min = 1;
   step = 1;
@@ -31,7 +31,11 @@ export class ShoppingCartComponent implements OnInit {
 
   totalAmount: number = 0;
 
-  constructor(private router : Router, private cartStore : AddToCartService) {}
+  constructor(
+    private router: Router,
+    private cartStore: AddToCartService,
+    private wishStore: AddToWishlistService
+  ) {}
 
   onSlider(index: number, qty: number) {
     this.cartItems[index].quantity = qty;
@@ -40,25 +44,28 @@ export class ShoppingCartComponent implements OnInit {
 
   calculateTotalAmount() {
     let total = 0;
-    this.cartItems.forEach((item : CartItem) => {
+    this.cartItems.forEach((item: CartItem) => {
       total += item.quantity * item.price;
-      });
-      return total;
+    });
+    return total;
   }
 
-  onContinueShopping(){
+  onContinueShopping() {
     this.router.navigate(['home']);
   }
 
-  onRemoveItemFromCart(index : number){
+  onRemoveItemFromCart(index: number) {
     this.cartStore.updateCartStore(index);
   }
 
-  ngOnInit(): void {
-  this.totalAmount = this.calculateTotalAmount();
-  this.cartStore.getCartStore().subscribe(currentCart => {
-    this.cartItems = currentCart;
-  });
-}
+  onAddItemToWishlist(item: CartItem) {
+    this.wishStore.setWishStore({ ...item });
+  }
 
+  ngOnInit(): void {
+    this.totalAmount = this.calculateTotalAmount();
+    this.cartStore.getCartStore().subscribe((currentCart) => {
+      this.cartItems = currentCart;
+    });
+  }
 }

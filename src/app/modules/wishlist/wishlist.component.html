@@ -4,8 +4,11 @@
     <app-product-list
       class="w-full"
       [products]="products"
-      [buttons]="['Move to cart', 'Remove']"
-      [info]="'Item added on '"
+      primaryBtnLabel="Add to cart"
+      (primaryActionEmitter)="onAddItemToCart($event)"
+      secondaryBtnLabel="Remove"
+      (secondaryActionEmitter)="onRemoveItemFromWishlist($event)"
+      info="Item added on "
     ></app-product-list>
   </div>
   <div

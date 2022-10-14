@@ -12,8 +12,8 @@
           <p><em>{{info}}</em>24 July 2022</p>
         </div>
         <div class="flex flex-col justify-evenly h-28">
-          <button mat-raised-button class="m-2" *ngFor="let btn of buttons">{{btn}}</button>
-          <!-- <button mat-raised-button class="m-2">{{buttons[1]}}</button> -->
+          <button mat-raised-button class="m-2" (click)="primaryAction(product)">{{primaryBtnLabel}}</button>
+          <button mat-raised-button class="m-2" (click)="secondaryAction(product)">{{secondaryBtnLabel}}</button>
         </div>
       </div>
     </li>

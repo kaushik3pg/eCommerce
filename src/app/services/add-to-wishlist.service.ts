@@ -16,6 +16,7 @@ export interface WishItem {
   price: number;
   reviews: number;
   avgrating: number;
+  quantity?: number;
 }
 
 @Injectable({
@@ -41,6 +42,14 @@ export class AddToWishlistService {
       );
       this.wishStore.next([...this.wishStore.value, item]);
     }
+  }
+
+  updateWishStore(id: number){
+    let itemToBeRemoved = this.wishStore.value.filter(
+      (wishItem) => wishItem.id !== id
+    );
+    this.launchSnackbar(item_removed_from_wishlist, close_snackbar, snackbar_duration);
+    this.wishStore.next(itemToBeRemoved);
   }
 
   launchSnackbar(msg: string, action: string, duration: number) {

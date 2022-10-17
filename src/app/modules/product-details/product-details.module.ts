@@ -8,6 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [ProductDetailsComponent],
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatSliderModule,
     FormsModule,
+    MatCardModule,
   ],
 })
 export class ProductDetailsModule {}

@@ -55,11 +55,19 @@ export class AddToCartService {
     let itemToBeRemoved = this.cartStore.value.filter(
       (cartItem) => cartItem.id !== id
     );
-    this.launchSnackbar(item_removed_from_cart, close_snackbar, snackbar_duration);
+    this.launchSnackbar(
+      item_removed_from_cart,
+      close_snackbar,
+      snackbar_duration
+    );
     this.cartStore.next(itemToBeRemoved);
   }
 
   launchSnackbar(msg: string, action: string, duration: number) {
-    this.snackbar.open(msg, action, { duration });
+    this.snackbar.open(msg, action, {
+      duration,
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom',
+    });
   }
 }

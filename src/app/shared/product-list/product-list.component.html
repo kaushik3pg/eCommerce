@@ -1,20 +1,26 @@
-<ul class="flex flex-col m-2">
-    <li *ngFor="let product of products; index as i">
-      <mat-divider *ngIf="i !== 0 "></mat-divider>
-      <div class="flex flex-row xs:flex-col sm:flex-col justify-between items-center p-6">
-        <div class="product__list-item max-h-28 flex items-center justify-center  p-2 rounded shadow-md">
-          <img class="h-28" [src]="product.imgUrl" alt="" />
-        </div>
-        <div class="flex flex-col items-center">
-          <h2>{{ product.title }}<span class="text-sm">({{product.category}})</span></h2>
-        </div>
-        <div class="flex flex-col items-center">
-          <p><em>{{info}}</em>24 July 2022</p>
-        </div>
-        <div class="flex flex-col justify-evenly h-28">
-          <button mat-raised-button class="m-2" (click)="primaryAction(product)">{{primaryBtnLabel}}</button>
-          <button mat-raised-button class="m-2" (click)="secondaryAction(product)">{{secondaryBtnLabel}}</button>
-        </div>
-      </div>
-    </li>
-  </ul>
+<ul class="flex flex-row flex-wrap justify-start">
+  <li *ngFor="let product of products; index as i" class="m-2">
+    <mat-card class="w-[300px]">
+      <mat-card-header>
+        <mat-card-title>{{ product.title }}</mat-card-title>
+        <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="product.imgUrl" [alt]="product.title" />
+      <mat-card-content>
+        <h2>{{ product.price | currency }}</h2>
+        <p>
+          <em>{{ info }}</em
+          >24 July 2022
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="secondaryAction(product)">
+          {{ secondaryBtnLabel }}
+        </button>
+        <button mat-button color="primary" (click)="primaryAction(product)">
+          {{ primaryBtnLabel }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </li>
+</ul>

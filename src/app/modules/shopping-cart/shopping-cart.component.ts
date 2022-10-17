@@ -2,7 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddToCartService } from 'src/app/services/add-to-cart.service';
 import { AddToWishlistService } from 'src/app/services/add-to-wishlist.service';
-import { shoppingCart } from '../../data/cart';
+import {
+  cart_summary,
+  remove_item,
+  pay,
+  invoice,
+  add_to_wishlist,
+  continue_shopping,
+  no_item_in_cart,
+} from '../../data/constants';
 
 export interface CartItem {
   id: number;
@@ -30,6 +38,14 @@ export class ShoppingCartComponent implements OnInit {
   quantityPurchased = 0;
 
   totalAmount: number = 0;
+
+  pageHeading = cart_summary;
+  primaryBtn = add_to_wishlist;
+  secondaryBtn = remove_item;
+  payBtn = pay;
+  invoiceHeading = invoice;
+  continueBtn = continue_shopping;
+  noItemMsg = no_item_in_cart;
 
   constructor(
     private router: Router,

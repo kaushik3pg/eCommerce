@@ -1,70 +1,63 @@
 <div class="flex flex-col justify-center items-center p-4 w-full">
-  <h1>Cart Summary</h1>
+  <h1>{{pageHeading}}</h1>
   <div class="flex flex-row w-full" *ngIf="cartItems.length">
     <div
-      class="flex flex-col m-2 w-2/3 self-start xs:self-center sm:self-center border-2 border-black-100"
+      class="flex flex-col m-2 w-2/3 self-start xs:self-center sm:self-center"
     >
-      <ul class="flex flex-col">
-        <li *ngFor="let item of cartItems; index as i">
-          <mat-divider *ngIf="i !== 0"></mat-divider>
-          <div class="flex flex-row xs:flex-col sm:flex-col items-center p-4">
-            <div
-              class="product__image max-h-40 flex items-center justify-start p-2 rounded shadow-md"
-            >
-              <img class="h-40 p-2" [src]="item.imgUrl" alt="" />
+      <ul class="flex flex-row flex-wrap justify-start">
+        <li *ngFor="let item of cartItems; index as i" class="m-2">
+        <mat-card class="w-[350px]">
+          <mat-card-header>
+            <mat-card-title>{{ item.title }}</mat-card-title>
+            <mat-card-subtitle>{{item.category}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="item.imgUrl" [alt]="item.title">
+          <mat-card-content>
+            <h2>
+              <span class="text-sm"
+                >{{ item.price | currency }} * {{ item.quantity }} = </span
+              >{{ item.price*item.quantity | currency }}
+            </h2>
+            <div class="flex flex-row justify-center items-center px-2 shadow rounded border-2 border-black-100">
+              Qty: {{ min
+              }} <mat-slider
+                [max]="max"
+                [min]="min"
+                [step]="step"
+                [(ngModel)]="item.quantity"
+                (change)="onSlider(i, item.quantity)"
+              ></mat-slider
+              > {{ max }}
             </div>
-            <div
-              class="h-40 flex flex-col flex-grow justify-between mx-4 items-center"
-            >
-              <div class="flex flex-col justify-center items-center">
-                <h2>
-                  {{ item.title }}
-                  <span class="text-sm">({{ item.category }})</span>
-                </h2>
-              </div>
-              <div class="flex flex-col justify-center items-center">
-                <h2>
-                  <span class="text-sm"
-                    >{{ item.price | currency }} * {{ item.quantity }} = </span
-                  >{{ item.price*item.quantity | currency }}
-                </h2>
-              </div>
-              <div
-                class="flex sm:flex-col xs:flex-col items-center justify-between w-full"
-              >
-                <div class="flex flex-row justify-center items-center px-2 shadow rounded border-2 border-black-100">
-                  Qty: {{ min
-                  }}<mat-slider
-                    [max]="max"
-                    [min]="min"
-                    [step]="step"
-                    [(ngModel)]="item.quantity"
-                    (change)="onSlider(i, item.quantity)"
-                  ></mat-slider
-                  >{{ max }}
-                </div>
-                <div class="flex items-center justify-between p-4 ">
-                  <button class="underline m-2" (click)="onRemoveItemFromCart(item.id)">Remove item</button>
-                  <button class="underline m-2" (click)="onAddItemToWishlist(item)">Move to wishlist</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="onRemoveItemFromCart(item.id)">{{secondaryBtn}}</button>
+            <button mat-button color="primary" (click)="onAddItemToWishlist(item)">{{primaryBtn}}</button>
+          </mat-card-actions>
+        </mat-card>
       </ul>
     </div>
     <div class="flex flex-col flex-grow justify-start items-center">
-      <div class="flex flex-col justify-start items-center w-full">
-        <h1>Total amount to be paid : {{ calculateTotalAmount() | currency }}</h1>
-        <button mat-raised-button color="primary" class="w-full h-[50px]">
-          Proceed to pay
-        </button>
-      </div>
+        <mat-card class="example-card w-full">
+          <mat-card-title>{{invoiceHeading}}</mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <h3>Total MRP : {{calculateTotalAmount() | currency}}</h3>
+            <p>Total Items : {{cartItems.length}}</p>
+            <p>Discount % : 10%</p>
+            <p>Discount Amount : -{{calculateTotalAmount()/10 | currency }}</p>
+            <h1>Total amount : {{ calculateTotalAmount() - (calculateTotalAmount()/10) | currency }}</h1>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" class="w-full">{{payBtn}}</button>
+
+          </mat-card-actions>
+        </mat-card>
     </div>
   </div>
 <div class="flex flex-col justify-center items-center mt-36" *ngIf="!cartItems.length">
-    <p >Your shopping cart is empty!</p>
-    <button mat-raised-button color="primary" (click)="onContinueShopping()">Continue shopping</button>
+    <p >{{noItemMsg}}</p>
+    <button mat-raised-button color="primary" (click)="onContinueShopping()">{{continueBtn}}</button>
 </div>
 
 </div>

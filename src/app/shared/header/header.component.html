@@ -27,23 +27,23 @@
       <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="onUserPageLaunch('profile')">
           <mat-icon aria-hidden="false" fontIcon="person"></mat-icon>
-          Profile
+          {{viewProfileBtn}}
         </button>
         <button mat-menu-item (click)="onUserPageLaunch('wishlist')">
           <mat-icon aria-hidden="false" fontIcon="favorite"></mat-icon>
-          Wishlist
+          {{viewWishlistBtn}}
         </button>
         <button mat-menu-item (click)="onUserPageLaunch('orders')">
           <mat-icon aria-hidden="false" fontIcon="redeem"></mat-icon>
-          Orders
+          {{viewOrdersBtn}}
         </button>
         <button mat-menu-item *ngIf="loginDone" (click)="onSignout()">
           <mat-icon aria-hidden="false" fontIcon="logout"></mat-icon>
-          Signout
+          {{signoutBtn}}
         </button>
         <button mat-menu-item *ngIf="!loginDone" (click)="onSignin()">
           <mat-icon aria-hidden="false" fontIcon="login"></mat-icon>
-          Signin
+          {{signinBtn}}
         </button>
       </mat-menu>
     </div>

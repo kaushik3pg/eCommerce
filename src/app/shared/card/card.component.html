@@ -31,7 +31,7 @@
         <mat-icon aria-hidden="false" aria-label="Example home icon"
           >favorite_border</mat-icon
         >
-        Add to wishlist
+        {{addToWishlistBtn}}
       </button>
       <button *ngIf="onCheckProductExistInWishlist(product.id)"
         mat-menu-item
@@ -41,7 +41,7 @@
         <mat-icon color="warn" aria-hidden="false" aria-label="Example home icon"
           >favorite</mat-icon
         >
-        Item in wishlist
+        {{itemAlreadyInWishlist}}
       </button>
       <button
         mat-menu-item
@@ -49,13 +49,13 @@
         aria-label="Example home icon"
         (click)="onAddToCart(product)"
       >
-        <mat-icon>shopping_cart</mat-icon> Add to cart
+        <mat-icon>shopping_cart</mat-icon> {{addToCartBtn}}
       </button>
       <button mat-menu-item mat-mini-fab aria-label="Example home icon">
-        <mat-icon>visibility</mat-icon> View ratings
+        <mat-icon>visibility</mat-icon> {{viewRatingsBtn}}
       </button>
       <button mat-menu-item mat-mini-fab aria-label="Example home icon">
-        <mat-icon>rate_review</mat-icon> Write a review
+        <mat-icon>rate_review</mat-icon> {{writeReviewBtn}}
       </button>
     </mat-menu>
   </div>

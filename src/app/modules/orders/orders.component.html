@@ -1,5 +1,5 @@
 <div class="flex flex-col justify-center items-center m-4">
-  <h1>Order History</h1>
+  <h1>{{pageHeading}}</h1>
   <div class="flex flex-col w-full" *ngIf="products.length">
     <!-- <app-product-list
       class="w-full"
@@ -15,9 +15,9 @@
     class="flex flex-col justify-center items-center mt-36"
     *ngIf="!products.length"
   >
-    <p>You haven't shopped with us yet!</p>
+    <p>{{noOrderHistoryMsg}}</p>
     <button mat-raised-button color="primary" (click)="onContinueShopping()">
-      Continue shopping
+     {{continueBtn}}
     </button>
   </div>
 </div>

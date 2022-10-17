@@ -3,6 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { productList } from 'src/app/data/products';
 import { AddToCartService } from 'src/app/services/add-to-cart.service';
 import { AddToWishlistService } from 'src/app/services/add-to-wishlist.service';
+import {
+  add_to_cart,
+  add_to_wishlist,
+  explore_more_products,product_details
+} from './../../data/constants';
 
 interface CartItem {
   id: number;
@@ -37,8 +42,12 @@ export class ProductDetailsComponent implements OnInit {
   tickInterval = 0;
 
   productId: number = 0;
-  // productAlreadyInCart = false;
-  // currentCart: CartItem[] = [];
+
+  pageHeading = product_details;
+  addToCartBtn = add_to_cart;
+  addToWishlistBtn = add_to_wishlist;
+  exploreMoreBtn = explore_more_products;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -53,8 +62,8 @@ export class ProductDetailsComponent implements OnInit {
   onAddToCart() {
     this.cartStore.setCartStore({ ...this.product, quantity: this.quantity });
   }
-  onAddToWishlist(){
-    this.wishStore.setWishStore({...this.product})
+  onAddToWishlist() {
+    this.wishStore.setWishStore({ ...this.product });
   }
   ngOnInit(): void {
     this.productId = Number(this.route.snapshot.paramMap.get('id'));

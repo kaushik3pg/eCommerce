@@ -7,8 +7,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [ShoppingCartComponent],
@@ -18,7 +19,10 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
-    MatInputModule,MatSliderModule,FormsModule
+    MatInputModule,
+    MatSliderModule,
+    FormsModule,
+    MatCardModule,
   ],
 })
 export class ShoppingCartModule {}

@@ -44,15 +44,23 @@ export class AddToWishlistService {
     }
   }
 
-  updateWishStore(id: number){
+  updateWishStore(id: number) {
     let itemToBeRemoved = this.wishStore.value.filter(
       (wishItem) => wishItem.id !== id
     );
-    this.launchSnackbar(item_removed_from_wishlist, close_snackbar, snackbar_duration);
+    this.launchSnackbar(
+      item_removed_from_wishlist,
+      close_snackbar,
+      snackbar_duration
+    );
     this.wishStore.next(itemToBeRemoved);
   }
 
   launchSnackbar(msg: string, action: string, duration: number) {
-    this.snackbar.open(msg, action, { duration });
+    this.snackbar.open(msg, action, {
+      duration,
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom',
+    });
   }
 }

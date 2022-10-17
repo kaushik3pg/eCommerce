@@ -1,54 +1,38 @@
 <div class="flex flex-col justify-center items-center p-4 w-full">
-  <h1>Product Details</h1>
+  <h1>{{pageHeading}}</h1>
   <div class="flex flex-row w-full">
     <div
-      class="flex flex-col m-2 w-full self-start xs:self-center sm:self-center "
+      class="flex flex-col m-2 w-full items-center "
     >
-      <div class="flex flex-row xs:flex-col sm:flex-col items-center p-4">
-        <div
-          class="product__image max-h-80 flex items-center justify-start p-2 rounded shadow-md"
-        >
-          <img class="h-80 p-2" [src]="product.imgUrl" alt="" />
-        </div>
-        <div
-          class="h-80 flex flex-col flex-grow justify-between mx-4 items-center"
-        >
-          <div class="flex flex-col justify-start items-center">
-            <h2>
-              {{ product.title }}
-              <span class="text-sm">({{ product.category }})</span>
-            </h2>
-            <p>(In stock)</p>
+      
+      <mat-card class="w-[550px]">
+        <mat-card-header>
+          <mat-card-title>{{ product.title }}<span class="text-md"
+            >({{ product.price | currency }} * {{ quantity }} = {{ product.price * quantity | currency }})</span
+          ></mat-card-title>
+          <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="product.imgUrl" [alt]="product.title" class="w-[200px]">
+        <mat-card-content>
+          <div class="flex flex-row justify-center items-center px-2 shadow rounded border-2 border-black-100">
+            Qty: {{ min
+            }} <mat-slider
+              [max]="max"
+              [min]="min"
+              [step]="step"
+              [(ngModel)]="quantity"
+              (change)="onSlider()"
+            ></mat-slider
+            > {{ max }}
           </div>
-          <div class="flex flex-col justify-center items-center">
-            <h2>
-              <span class="text-sm"
-                >{{ product.price | currency }} * {{ quantity }} = </span
-              >{{ product.price * quantity | currency }}
-            </h2>
-          </div>
-          <div
-            class="flex sm:flex-col xs:flex-col items-center justify-between w-full"
-          >
-            <div class="flex flex-row justify-center items-center px-2 shadow rounded border-2 border-black-100">
-              Qty: {{ min
-              }}<mat-slider
-                [max]="max"
-                [min]="min"
-                [step]="step"
-                [(ngModel)]="quantity"
-                (change)="onSlider()"
-              ></mat-slider
-              >{{ max }}
-            </div>
-            <div class="flex items-center w-2/3 justify-between p-4">
-              <button mat-raised-button class="underline m-4" (click)="onContinueShopping()">Explore more</button>
-              <button mat-raised-button class="underline m-4" (click)="onAddToWishlist()">Add to wishlist</button>
-              <button mat-raised-button color="primary" class="underline m-4" (click)="onAddToCart()">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="onContinueShopping()">{{exploreMoreBtn}}</button>
+          <button mat-button (click)="onAddToWishlist()">{{addToWishlistBtn}}</button>
+          <button mat-button color="primary" (click)="onAddToCart()">{{addToCartBtn}}</button>
+        </mat-card-actions>
+      </mat-card>
+
     </div>
   </div>
 </div>

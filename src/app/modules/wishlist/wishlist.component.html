@@ -1,12 +1,12 @@
 <div class="flex flex-col justify-center items-center m-4">
-  <h1>Your Wishlist</h1>
+  <h1>{{pageHeading}}</h1>
   <div class="flex flex-col w-full" *ngIf="products.length">
     <app-product-list
-      class="w-full"
+      class="w-full" 
       [products]="products"
-      primaryBtnLabel="Add to cart"
+      [primaryBtnLabel]="primaryBtn"
       (primaryActionEmitter)="onAddItemToCart($event)"
-      secondaryBtnLabel="Remove"
+      [secondaryBtnLabel]="secondaryBtn"
       (secondaryActionEmitter)="onRemoveItemFromWishlist($event)"
       info="Item added on "
     ></app-product-list>
@@ -15,9 +15,9 @@
     class="flex flex-col justify-center items-center mt-36"
     *ngIf="!products.length"
   >
-    <p>You haven't added an item to wishlist yet!</p>
+    <p>{{noItemInWishlistMsg}}</p>
     <button mat-raised-button color="primary" (click)="onContinueShopping()">
-      Continue shopping
+      {{continueBtn}}
     </button>
   </div>
 </div>

@@ -11,7 +11,13 @@ import { Subscription } from 'rxjs';
 import { menu } from 'src/app/data/menu';
 import { AddToCartService } from 'src/app/services/add-to-cart.service';
 import { ValidateLoginService } from 'src/app/services/validate-login.service';
-
+import {
+  profile_view,
+  wishlist_view,
+  signin,
+  signout,
+  orders_view,
+} from './../../data/constants';
 const fadeInOut = trigger('fadeInOut', [
   state('in', style({ opacity: 1, position: 'absolute', zIndex: 0 })),
   transition('void => *', [style({ opacity: 0 }), animate('300ms ease-in')]),
@@ -31,6 +37,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   subscriptionLogin!: Subscription;
   subscriptionCart!: Subscription;
+
+  viewProfileBtn = profile_view;
+  viewWishlistBtn = wishlist_view;
+  signinBtn = signin;
+  signoutBtn = signout;
+  viewOrdersBtn = orders_view;
+
   constructor(
     private router: Router,
     private validateLogin: ValidateLoginService,

@@ -3,6 +3,13 @@ import { Router } from '@angular/router';
 import { productList } from 'src/app/data/products';
 import { AddToCartService } from 'src/app/services/add-to-cart.service';
 import { AddToWishlistService } from 'src/app/services/add-to-wishlist.service';
+import {
+  your_wishlist,
+  continue_shopping,
+  no_item_in_wishlist,
+  add_to_cart,
+  remove_item,
+} from './../../data/constants';
 
 interface WishItem {
   id: number;
@@ -21,6 +28,13 @@ interface WishItem {
 })
 export class WishlistComponent implements OnInit {
   products: WishItem[] = [];
+
+  pageHeading = your_wishlist;
+  continueBtn = continue_shopping;
+  noItemInWishlistMsg = no_item_in_wishlist;
+  primaryBtn = add_to_cart;
+  secondaryBtn = remove_item;
+
   constructor(
     private router: Router,
     private wishStore: AddToWishlistService,
@@ -32,11 +46,11 @@ export class WishlistComponent implements OnInit {
   }
 
   onAddItemToCart(item: WishItem) {
-    console.log('You are ready to add ', item ,' to cart!!');
-    this.cartStore.setCartStore({...item, quantity: 1});
+    console.log('You are ready to add ', item, ' to cart!!');
+    this.cartStore.setCartStore({ ...item, quantity: 1 });
   }
   onRemoveItemFromWishlist(item: WishItem) {
-    console.log('You are ready to remove ', item ,' from wishlist!!');
+    console.log('You are ready to remove ', item, ' from wishlist!!');
     this.wishStore.updateWishStore(item.id);
   }
 

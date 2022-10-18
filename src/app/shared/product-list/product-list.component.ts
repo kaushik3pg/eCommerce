@@ -11,6 +11,7 @@ interface WishItem {
   reviews: number;
   avgrating: number;
   quantity?: number;
+  date: string;
 }
 @Component({
   selector: 'app-product-list',

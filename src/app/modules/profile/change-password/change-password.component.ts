@@ -7,6 +7,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import {change_password} from './../../../data/constants';
 
 const matchPassword = (): ValidatorFn => {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -21,6 +22,7 @@ const matchPassword = (): ValidatorFn => {
 })
 export class ChangePasswordComponent implements OnInit {
   changePasswordForm!: FormGroup;
+  changePasswordBtn = change_password;
   constructor(private fb: FormBuilder) {}
   createForm() {
     this.changePasswordForm = this.fb.group(

@@ -9,6 +9,8 @@ import {
   explore_more_products,product_details
 } from './../../data/constants';
 
+import {currentDate} from './../../utility-functions/common';
+
 interface CartItem {
   id: number;
   imgUrl: string;
@@ -63,7 +65,7 @@ export class ProductDetailsComponent implements OnInit {
     this.cartStore.setCartStore({ ...this.product, quantity: this.quantity });
   }
   onAddToWishlist() {
-    this.wishStore.setWishStore({ ...this.product });
+    this.wishStore.setWishStore({ ...this.product, date: currentDate });
   }
   ngOnInit(): void {
     this.productId = Number(this.route.snapshot.paramMap.get('id'));

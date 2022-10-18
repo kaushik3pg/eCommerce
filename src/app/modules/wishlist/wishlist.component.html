@@ -8,7 +8,7 @@
       (primaryActionEmitter)="onAddItemToCart($event)"
       [secondaryBtnLabel]="secondaryBtn"
       (secondaryActionEmitter)="onRemoveItemFromWishlist($event)"
-      info="Item added on "
+      [info]="itemAddedOnTxt"
     ></app-product-list>
   </div>
   <div

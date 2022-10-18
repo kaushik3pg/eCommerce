@@ -1,5 +1,5 @@
 import { AfterContentInit, AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { UrlHandlingStrategy } from '@angular/router';
+import { shopnow } from './../../data/constants';
 
 @Component({
   selector: 'app-slider',
@@ -16,6 +16,8 @@ export class SliderComponent implements OnInit, AfterViewInit, OnDestroy {
     slidesLength : number = this.slides.length;
   imgIndex: number = 0;
   interval:any;
+
+  shopNowBtn = shopnow;
 
   constructor() {}
 
@@ -41,7 +43,6 @@ export class SliderComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
   ngOnDestroy(): void {
-    console.log("component was destroyed!");
     clearInterval(this.interval);
   }
 }

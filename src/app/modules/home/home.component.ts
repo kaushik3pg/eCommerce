@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // this.subscription = this.validateLogin.getLoginStatus().subscribe((loginStatus) => {
-    //   console.log("Login status is : ", loginStatus);
     //   !loginStatus ? this.router.navigate(['account']) : null;
     // });
   }

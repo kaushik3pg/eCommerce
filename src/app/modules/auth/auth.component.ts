@@ -19,7 +19,6 @@ export class AuthComponent implements OnInit, OnDestroy {
     this.subscription = this.validateLogin
       .getLoginStatus()
       .subscribe((loginStatus) => {
-        console.log('Login status is : ', loginStatus);
         !loginStatus ? null : this.router.navigate(['']);
       });
   }

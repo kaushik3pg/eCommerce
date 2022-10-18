@@ -24,17 +24,22 @@
     </p>
   </div>
 
-  <nav mat-tab-nav-bar [tabPanel]="tabPanel">
-    <a
-      mat-tab-link
-      *ngFor="let link of links; index as i"
-      [routerLink]="link"
-      (click)="activeLink = link"
-      [active]="activeLink == link"
-      >{{ tabTitles[i] }}</a
-    >
-  </nav>
-  <mat-tab-nav-panel #tabPanel
+  <div class="flex flex-col justify-center items-center w-1/2 sm:w-2/3 xs:w-full md:w-1/2">
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+      <a
+        mat-tab-link
+        *ngFor="let link of links; index as i"
+        [routerLink]="link"
+        (click)="activeLink = link"
+        [active]="activeLink == link"
+        >{{ tabTitles[i] }}</a
+      >
+    </nav>
+    <mat-tab-nav-panel #tabPanel class="w-full"
     ><router-outlet></router-outlet
   ></mat-tab-nav-panel>
+  </div>
+
+
+  
 </div>

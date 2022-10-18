@@ -11,6 +11,7 @@ import {
   continue_shopping,
   no_item_in_cart,
 } from '../../data/constants';
+import { currentDate } from 'src/app/utility-functions/common';
 
 export interface CartItem {
   id: number;
@@ -75,7 +76,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   onAddItemToWishlist(item: CartItem) {
-    this.wishStore.setWishStore({ ...item });
+    this.wishStore.setWishStore({ ...item, date: currentDate });
   }
 
   ngOnInit(): void {

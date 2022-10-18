@@ -8,6 +8,8 @@ import {
   add_to_wishlist,
   item_added_to_wishlist,
 } from './../../data/constants';
+import { currentDate } from './../../utility-functions/common';
+
 interface Item {
   id: number;
   imgUrl: string;
@@ -44,7 +46,7 @@ export class CardComponent implements OnInit {
   }
 
   onAddToWishlist(item: Item) {
-    this.wishStore.setWishStore({ ...item });
+    this.wishStore.setWishStore({ ...item, date: currentDate });
   }
 
   onCheckProductExistInWishlist(id: number) {

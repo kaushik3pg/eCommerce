@@ -8,8 +8,10 @@ import {
   continue_shopping,
   no_item_in_wishlist,
   add_to_cart,
-  remove_item,
+  remove_item,itemAddedToWishlistOn
 } from './../../data/constants';
+
+import {currentDate} from './../../utility-functions/common';
 
 interface WishItem {
   id: number;
@@ -20,6 +22,7 @@ interface WishItem {
   reviews: number;
   avgrating: number;
   quantity?: number;
+  date: string;
 }
 @Component({
   selector: 'app-wishlist',
@@ -29,11 +32,13 @@ interface WishItem {
 export class WishlistComponent implements OnInit {
   products: WishItem[] = [];
 
+
   pageHeading = your_wishlist;
   continueBtn = continue_shopping;
   noItemInWishlistMsg = no_item_in_wishlist;
   primaryBtn = add_to_cart;
   secondaryBtn = remove_item;
+  itemAddedOnTxt = itemAddedToWishlistOn;
 
   constructor(
     private router: Router,
@@ -46,11 +51,9 @@ export class WishlistComponent implements OnInit {
   }
 
   onAddItemToCart(item: WishItem) {
-    console.log('You are ready to add ', item, ' to cart!!');
     this.cartStore.setCartStore({ ...item, quantity: 1 });
   }
   onRemoveItemFromWishlist(item: WishItem) {
-    console.log('You are ready to remove ', item, ' from wishlist!!');
     this.wishStore.updateWishStore(item.id);
   }
 

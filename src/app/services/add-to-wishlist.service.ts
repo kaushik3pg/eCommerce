@@ -17,6 +17,7 @@ export interface WishItem {
   reviews: number;
   avgrating: number;
   quantity?: number;
+  date : string;
 }
 
 @Injectable({

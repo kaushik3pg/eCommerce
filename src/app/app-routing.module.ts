@@ -9,6 +9,26 @@ const routes: Routes = [
       import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'electronics',
+    loadChildren: () =>
+      import('./modules/electronics/electronics.module').then((m) => m.ElectronicsModule),
+  },
+  {
+    path: 'watches',
+    loadChildren: () =>
+      import('./modules/watches/watches.module').then((m) => m.WatchesModule),
+  },
+  {
+    path: 'appliances',
+    loadChildren: () =>
+      import('./modules/appliances/appliances.module').then((m) => m.AppliancesModule),
+  },
+  {
+    path: 'furniture',
+    loadChildren: () =>
+      import('./modules/furniture/furniture.module').then((m) => m.FurnitureModule),
+  },
+  {
     path: 'profile',
     loadChildren: () =>
       import('./modules/profile/profile.module').then((m) => m.ProfileModule),

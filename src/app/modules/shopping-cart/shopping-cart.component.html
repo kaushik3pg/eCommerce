@@ -18,7 +18,7 @@
                 >{{ item.price | currency }} * {{ item.quantity }} = </span
               >{{ item.price*item.quantity | currency }}
             </h2>
-            <div class="flex flex-row justify-center items-center px-2 shadow rounded border-2 border-black-100">
+            <!-- <div class="flex flex-row justify-center items-center px-2 shadow rounded border-2 border-black-100">
               Qty: {{ min
               }} <mat-slider
                 [max]="max"
@@ -28,6 +28,19 @@
                 (change)="onSlider(i, item.quantity)"
               ></mat-slider
               > {{ max }}
+            </div> -->
+            <div class="flex flex-row justify-start items-center">
+              <span class="font-bold text-sm text-green-600 mr-2">Select Quantity</span>
+              <span class="font-normal text-2xl text-gray-500">{{ min }}</span>
+              <mat-slider
+                [max]="max"
+                [min]="min"
+                [step]="step"
+                [(ngModel)]="item.quantity"
+                (change)="onSlider(i, item.quantity)"
+                color="primary"
+              ></mat-slider
+              ><span class="font-normal text-2xl text-gray-500"> {{ max }}</span>
             </div>
           </mat-card-content>
           <mat-card-actions>

@@ -1,6 +1,6 @@
 <ul class="flex flex-row flex-wrap justify-start">
   <li *ngFor="let product of products; index as i" class="m-2">
-    <mat-card class="w-[300px]">
+    <mat-card class="w-[300px] cursor-pointer" (click)="onProductCardClickNavigateTo(product.id)">
       <mat-card-header>
         <mat-card-title>{{ product.title }}</mat-card-title>
         <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
@@ -14,10 +14,10 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button (click)="secondaryAction(product)">
+        <button mat-button (click)="secondaryAction($event, product)">
           {{ secondaryBtnLabel }}
         </button>
-        <button mat-button color="primary" (click)="primaryAction(product)">
+        <button mat-button color="primary" (click)="primaryAction($event, product)">
           {{ primaryBtnLabel }}
         </button>
       </mat-card-actions>

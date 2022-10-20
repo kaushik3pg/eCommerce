@@ -71,12 +71,18 @@ export class ShoppingCartComponent implements OnInit {
     this.router.navigate(['home']);
   }
 
-  onRemoveItemFromCart(index: number) {
+  onRemoveItemFromCart(event:any, index: number) {
+    event.stopPropagation();
     this.cartStore.updateCartStore(index);
   }
 
-  onAddItemToWishlist(item: CartItem) {
+  onAddItemToWishlist(event:any, item: CartItem) {
+    event.stopPropagation();
     this.wishStore.setWishStore({ ...item, date: currentDate });
+  }
+
+  onProductCardClickNavigateTo(id: number) {
+    this.router.navigate(['product', id]);
   }
 
   ngOnInit(): void {

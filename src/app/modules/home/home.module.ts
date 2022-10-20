@@ -9,10 +9,6 @@ import { SliderModule } from '../../shared/slider/slider.module';
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    CardModule, SliderModule
-  ],
+  imports: [CommonModule, HomeRoutingModule, CardModule, SliderModule],
 })
 export class HomeModule {}

@@ -39,7 +39,11 @@ export const itemAddedToWishlistOn = 'Item added on ';
 
 //headers
 export const product_details = 'PRODUCT DETAILS';
-export const features_products = 'FEATURED PRODUCTS';
+export const featured_products = 'ALL FEATURED PRODUCTS';
+export const appliances = 'ALL FEATURED APPLIANCES';
+export const watches = 'BEST OF WATCHES';
+export const furniture = 'RANGE OF FURNITURES';
+export const electronics = 'ELECTRONICS FOR EVERYONE';
 export const cart_summary = 'CART SUMMARY';
 export const orders_summary = 'ORDERS SUMMARY';
 export const your_wishlist = 'YOUR WISHLIST';

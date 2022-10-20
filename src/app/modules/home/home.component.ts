@@ -5,7 +5,7 @@ import { slides } from '../../data/slides';
 import { productList } from '../../data/products';
 
 import { ValidateLoginService } from '../../services/validate-login.service';
-import {features_products} from './../../data/constants';
+import {featured_products} from './../../data/constants';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   slides = slides;
   subscription! : Subscription;
 
-  pageHeading = features_products;
+  pageHeading = featured_products;
   constructor(
     private router: Router,
     private validateLogin: ValidateLoginService

@@ -5,8 +5,15 @@ export const productList = [
     category: 'Electronics',
     title: 'Keyboard',
     price: 132,
-    reviews:78,
+    reviews: 78,
     avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
   },
   {
     id: 2,
@@ -14,8 +21,15 @@ export const productList = [
     category: 'Electronics',
     title: 'PC All-in-one',
     price: 1832,
-    reviews:78,
+    reviews: 78,
     avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
   },
   {
     id: 3,
@@ -23,8 +37,15 @@ export const productList = [
     category: 'Electronics',
     title: 'Headset',
     price: 32,
-    reviews:78,
+    reviews: 78,
     avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
   },
   {
     id: 4,
@@ -32,8 +53,15 @@ export const productList = [
     category: 'Electronics',
     title: 'Probook',
     price: 1232,
-    reviews:78,
+    reviews: 78,
     avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
   },
   {
     id: 5,
@@ -41,8 +69,15 @@ export const productList = [
     category: 'Electronics',
     title: 'Phone',
     price: 332,
-    reviews:78,
+    reviews: 78,
     avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
   },
   {
     id: 6,
@@ -50,7 +85,206 @@ export const productList = [
     category: 'Electronics',
     title: 'All-in-one Printer',
     price: 432,
-    reviews:78,
+    reviews: 78,
     avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 7,
+    imgUrl: 'assets/images/1-medium.png',
+    category: 'Electronics',
+    title: 'Keyboard',
+    price: 132,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 8,
+    imgUrl: 'assets/images/2-medium.png',
+    category: 'Electronics',
+    title: 'PC All-in-one',
+    price: 1832,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 9,
+    imgUrl: 'assets/images/3-medium.png',
+    category: 'Electronics',
+    title: 'Headset',
+    price: 32,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 10,
+    imgUrl: 'assets/images/4-medium.png',
+    category: 'Electronics',
+    title: 'Probook',
+    price: 1232,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 11,
+    imgUrl: 'assets/images/5-medium.png',
+    category: 'Electronics',
+    title: 'Phone',
+    price: 332,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 12,
+    imgUrl: 'assets/images/6-medium.png',
+    category: 'Electronics',
+    title: 'All-in-one Printer',
+    price: 432,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 13,
+    imgUrl: 'assets/images/1-medium.png',
+    category: 'Electronics',
+    title: 'Keyboard',
+    price: 132,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 14,
+    imgUrl: 'assets/images/2-medium.png',
+    category: 'Electronics',
+    title: 'PC All-in-one',
+    price: 1832,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 15,
+    imgUrl: 'assets/images/3-medium.png',
+    category: 'Electronics',
+    title: 'Headset',
+    price: 32,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 16,
+    imgUrl: 'assets/images/4-medium.png',
+    category: 'Electronics',
+    title: 'Probook',
+    price: 1232,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 17,
+    imgUrl: 'assets/images/5-medium.png',
+    category: 'Electronics',
+    title: 'Phone',
+    price: 332,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
+  },
+  {
+    id: 18,
+    imgUrl: 'assets/images/6-medium.png',
+    category: 'Electronics',
+    title: 'All-in-one Printer',
+    price: 432,
+    reviews: 78,
+    avgrating: 3.5,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    seller: 'UniqueSellers co.',
+    services: {
+      cod: 'Cash on delivery available',
+      return: '7 days replacement policy',
+    },
   },
 ];

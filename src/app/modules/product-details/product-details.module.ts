@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [ProductDetailsComponent],
@@ -22,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
     MatSliderModule,
     FormsModule,
     MatCardModule,
+    MatChipsModule,
   ],
 })
 export class ProductDetailsModule {}

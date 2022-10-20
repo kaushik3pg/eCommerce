@@ -6,10 +6,11 @@ import { AddToWishlistService } from 'src/app/services/add-to-wishlist.service';
 import {
   add_to_cart,
   add_to_wishlist,
-  explore_more_products,product_details
+  explore_more_products,
+  product_details,
 } from './../../data/constants';
 
-import {currentDate} from './../../utility-functions/common';
+import { currentDate } from './../../utility-functions/common';
 
 interface CartItem {
   id: number;
@@ -20,6 +21,12 @@ interface CartItem {
   reviews: number;
   avgrating: number;
   quantity?: number;
+  description: string;
+  seller: string;
+  services: {
+    cod: string;
+    return: string;
+  };
 }
 @Component({
   selector: 'app-product-details',
@@ -29,12 +36,18 @@ interface CartItem {
 export class ProductDetailsComponent implements OnInit {
   product: CartItem = {
     id: 2,
-    imgUrl: 'assets/images/2-medium.png',
-    category: 'Electronics',
-    title: 'PC All-in-one',
-    price: 1832,
-    reviews: 78,
-    avgrating: 3.5,
+    imgUrl: '',
+    category: '',
+    title: '',
+    price: 0,
+    reviews: 0,
+    avgrating: 0,
+    description: '',
+    seller: '',
+    services: {
+      cod: '',
+      return: '',
+    },
   };
   quantity = 1;
   max = 10;

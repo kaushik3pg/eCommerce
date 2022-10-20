@@ -2,3 +2,22 @@
     cursor: pointer;
     box-shadow: 5px 5px 5px var(--primary-bg-color);
 }
+
+.btn{
+    background-color: #eee;
+    color: #000000;
+    box-shadow: 2px 2px 2px #aaa;
+    border-radius: 2px; 
+}
+.primary{
+    background-color: var(--primary-bg-color);
+    color: #ffffff;
+    box-shadow: 2px 2px 2px #aaa;
+    border-radius: 2px;
+}
+
+.icon svg {
+    fill: red;
+    color: red;
+    background-color: red;
+}

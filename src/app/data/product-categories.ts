@@ -1,1 +1,1 @@
-export const productCategories = ['Electronics', 'Appliances', 'Decor', 'Kitchen', 'Office', 'Home', 'Bedroom'];
+export const productCategories = ['Electronics', 'Watches','Furniture','Appliances'];

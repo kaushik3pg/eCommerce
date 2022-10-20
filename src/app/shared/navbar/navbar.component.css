@@ -1,4 +1,6 @@
 .active{
-    color: white;
-    background-color: black;
+    color: var(--primary-bg-color);
+    background-color: #fff;
+    font-weight: bold;
+    letter-spacing: 1.25px;
 }

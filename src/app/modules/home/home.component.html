@@ -1,8 +1,45 @@
-<div class="flex flex-col">
-  <app-slider [slides]="slides" ></app-slider>
-  <h1 class="pt-6 self-center">{{pageHeading}}</h1>
+<mat-drawer-container class="flex flex-col">
+  <!-- <div class="flex flex-col"> -->
+  <app-slider [slides]="slides"></app-slider>
+  <div
+    class="flex flex-col items-center m-4 p-4"
+  >
+    <h1 class="">{{ pageHeading }}</h1>
+    <button (click)="drawer.toggle()" class="flex items-center self-end"> 
+      <mat-icon>tune</mat-icon> Filter Products
+    </button>
+  </div>
+
   <app-card
     [products]="products"
     class="flex flex-row flex-wrap justify-center mt-4 mb-20"
   ></app-card>
-</div>
+  <!-- </div> -->
+
+  <mat-drawer
+    #drawer
+    class="flex flex-col items-center justify-start p-2 w-[350px] border-2 border-blue-500"
+    mode="over"
+  >
+    <div
+      class="flex flex-col h-full border-2 border-gray-100 p-2"
+    >
+      <h2 class="self-center">Filters</h2>
+      <mat-divider></mat-divider>
+      <h3>Filter by Category</h3>
+
+      <mat-selection-list #filteredCategories [(ngModel)]="selectedCategories" (selectionChange)="onCategoryFilterChange()">
+        <mat-list-option *ngFor="let category of categories;" [value]="category">
+          {{category}}
+        </mat-list-option>
+      </mat-selection-list>
+      <!-- <p>
+        Categories selected: {{selectedCategories}}
+      </p>
+      <p>
+        Options selected: {{filteredCategories.selectedOptions.selected.length}}
+      </p> -->
+    </div>
+
+  </mat-drawer>
+</mat-drawer-container>

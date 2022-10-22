@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { AddToCartService } from 'src/app/services/add-to-cart.service';
 import { AddToWishlistService } from 'src/app/services/add-to-wishlist.service';
 import {
@@ -38,7 +39,8 @@ export class CardComponent implements OnInit {
 
   constructor(
     private cartStore: AddToCartService,
-    private wishStore: AddToWishlistService
+    private wishStore: AddToWishlistService,
+    private router: Router
   ) {}
 
   onAddToCart(item: Item) {
@@ -51,6 +53,10 @@ export class CardComponent implements OnInit {
 
   onCheckProductExistInWishlist(id: number) {
     return this.wishlist.filter((item) => item.id === id).length ? true : false;
+  }
+
+  onProductCardClickNavigateTo(id: number){
+    this.router.navigate(['product', id])
   }
 
   ngOnInit(): void {

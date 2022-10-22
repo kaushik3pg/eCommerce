@@ -1,7 +1,7 @@
 <mat-card
   *ngFor="let product of products"
   class="card__link m-2"
-  [routerLink]="['product/', product.id]"
+  (click)="onProductCardClickNavigateTo(product.id)"
 >
   <mat-card-header class="justify-center items-center text-center">
     <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>

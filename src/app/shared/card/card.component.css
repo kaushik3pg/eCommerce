@@ -1,6 +1,9 @@
 .card__link{
     cursor: pointer;
     width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .card__link:hover {
     animation: hover ;

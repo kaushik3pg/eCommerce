@@ -35,6 +35,7 @@ export const invoice = 'INVOICE';
 export const no_item_in_wishlist = "You haven't added an item to wishlist yet!";
 export const no_item_in_cart = 'Your shopping cart is empty!';
 export const no_order_history = "You haven't shopped with us yet!";
+export const no_search_results = "Sorry, no products match your search criteria!!"
 export const itemAddedToWishlistOn = 'Item added on ';
 
 //headers

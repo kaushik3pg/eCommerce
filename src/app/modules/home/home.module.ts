@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     MatDividerModule,
     MatListModule,
     FormsModule,
+    MatPaginatorModule,
   ],
 })
 export class HomeModule {}

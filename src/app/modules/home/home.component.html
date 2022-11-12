@@ -42,9 +42,9 @@
     </div>
 
   </mat-drawer>
-  <mat-paginator [length]="products.length"
-              [pageSize]="10"
+  <mat-paginator showFirstLastButtons [length]="totalProducts"
+              [pageSize]="itemsPerPage"
               [pageSizeOptions]="[5, 10, 15, 20, 25]"
-              aria-label="Select page">
+              aria-label="Select page" (page)="onPageChange($event)">
 </mat-paginator>
 </mat-drawer-container>

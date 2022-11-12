@@ -8,7 +8,6 @@ import { ValidateLoginService } from '../../services/validate-login.service';
 import { featured_products } from './../../data/constants';
 import { productCategories } from 'src/app/data/product-categories';
 
-
 interface Item {
   id: number;
   imgUrl: string;
@@ -31,33 +30,41 @@ interface Item {
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  products = productList;
+  products: Item[] = [];
   slides = slides;
   categories = productCategories;
   selectedCategories = [];
   subscription!: Subscription;
+  itemsPerPage = 25;
+  totalProducts = 0;
 
   pageHeading = featured_products;
-  constructor(
-    private router: Router,
-    private validateLogin: ValidateLoginService
-  ) {}
+  constructor() {}
 
   onCategoryFilterChange() {
-    console.log(this.selectedCategories);
     const filteredProductList: Item[] = [];
-  productList.forEach(product => {
-    this.selectedCategories.map(category => category === product.category ? filteredProductList.push(product) : null)
-  })
-  this.products = filteredProductList.length ? filteredProductList : productList;
-  }
-  ngOnInit(): void {
-    // this.subscription = this.validateLogin.getLoginStatus().subscribe((loginStatus) => {
-    //   !loginStatus ? this.router.navigate(['account']) : null;
-    // });
+    productList.forEach((product) => {
+      this.selectedCategories.map((category) =>
+        category === product.category ? filteredProductList.push(product) : null
+      );
+    });
+
+    this.products = filteredProductList.length
+      ? filteredProductList
+      : productList;
   }
 
-  ngOnDestroy(): void {
-    // this.subscription.unsubscribe();
+  onPageChange(event: any) {
+    this.itemsPerPage = event.pageSize;
+    let startIndex = event.pageIndex * event.pageSize;
+    let endIndex = startIndex + event.pageSize;
+    this.products = productList.slice(startIndex, endIndex);
   }
+
+  ngOnInit(): void {
+    this.totalProducts = productList.length;
+    this.products = productList.slice(0, this.itemsPerPage);
+  }
+
+  ngOnDestroy(): void {}
 }

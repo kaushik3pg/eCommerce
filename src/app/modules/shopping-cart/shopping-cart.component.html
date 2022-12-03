@@ -51,7 +51,7 @@
             <h1>Total amount : {{ calculateTotalAmount() - (calculateTotalAmount()/10) | currency }}</h1>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" class="w-full">{{payBtn}}</button>
+            <button mat-raised-button color="primary" class="w-full" (click)="onProceed()">{{proceedBtn}}</button>
 
           </mat-card-actions>
         </mat-card>

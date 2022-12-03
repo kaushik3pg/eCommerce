@@ -49,7 +49,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'payment',
+    path: 'checkout',
     loadChildren: () =>
       import('./modules/payment/payment.module').then((m) => m.PaymentModule),
   },
@@ -73,6 +73,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/search-results/search-results.module').then((m) => m.SearchResultsModule),
   },
+  { path: 'confirm-order-details', loadChildren: () => import('./modules/confirm-order-details/confirm-order-details.module').then(m => m.ConfirmOrderDetailsModule) },
   {
     path: '**',
     redirectTo: '',

@@ -12,14 +12,14 @@ export interface PaymentItem {
   cardHolderName: string;
   cardNumber: number;
   cardType: string;
-  cardExpiry: Date;
+  cardCVV: number;
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class SavePaymentInformationService {
-  private paymentStore = new BehaviorSubject<PaymentItem>({ cardHolderName: '', cardNumber: 0, cardType: '', cardExpiry: new Date() });
+  private paymentStore = new BehaviorSubject<PaymentItem>({ cardHolderName: 'CARD HOLDER NAME', cardNumber: 1111111111111111, cardType: 'Visa', cardCVV: 111 });
   private paymentStore$ = this.paymentStore.asObservable();
 
   constructor(private snackbar: MatSnackBar) {}

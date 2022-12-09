@@ -7,6 +7,7 @@ export const userDetails = {
   memberSince: '25 Feb 2022',
   addresses: [
     {
+      id: 1,
       house: 27,
       street: 2,
       area: 'Shashtri Nagar',
@@ -15,27 +16,13 @@ export const userDetails = {
       pincode: 240002,
     },
     {
-      house: 237,
-      street: 'Abulane asdfasdf',
-      area: 'Begum bagh',
-      city: 'Meerut',
-      state: 'U.P.',
-      pincode: 540502,
-    },   {
-      house: 27,
-      street: 2,
-      area: 'Shashtri Nagar',
-      city: 'Meerut',
-      state: 'U.P.',
-      pincode: 240002,
-    },
-    {
+      id: 2,
       house: 237,
       street: 'Abulane',
       area: 'Begum bagh',
       city: 'Meerut',
       state: 'U.P.',
       pincode: 540502,
-    },
+    }
   ],
 };

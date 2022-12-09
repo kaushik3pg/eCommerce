@@ -6,22 +6,23 @@ import {
   close_snackbar,
   snackbar_duration,
 } from '../data/constants';
+import { userDetails } from '../data/user';
 export interface AddressItem {
-  house: number,
-  street: number,
-  area: string,
-  city: string,
-  state: string,
-  pincode: number,
+  id: number,
+  house: number;
+  street: number | string;
+  area: string;
+  city: string;
+  state: string;
+  pincode: number;
 }
 
-
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SaveAddressInformationService {
-  private addressStore = new BehaviorSubject<AddressItem>({
+  private selectedAddressStore = new BehaviorSubject<AddressItem>({
+    id: 0,
     house: 0,
     street: 0,
     area: '',
@@ -29,21 +30,31 @@ export class SaveAddressInformationService {
     state: '',
     pincode: 0,
   });
-  private addressStore$ = this.addressStore.asObservable();
+  private selectedAddressStore$ = this.selectedAddressStore.asObservable();
 
-  constructor(private snackbar: MatSnackBar) { }
+  private allAddressesStore = new BehaviorSubject<AddressItem[]>(userDetails.addresses);
+  private allAddressesStore$ = this.allAddressesStore.asObservable();
 
-  getAddressStore() {
-    return this.addressStore$;
+
+  constructor(private snackbar: MatSnackBar) {}
+
+  getSelectedAddressStore() {
+    return this.selectedAddressStore$;
   }
-  setAddressStore(item: AddressItem) {
-    this.addressStore.next(item);
-    this.launchSnackbar(
-      address_info_saved,
-      close_snackbar,
-      snackbar_duration
-    );
+  setSelectedAddressStore(item: AddressItem) {
+    this.selectedAddressStore.next(item);
+    this.launchSnackbar(address_info_saved, close_snackbar, snackbar_duration);
   }
+
+  getAllAddressesStore() {
+    return this.allAddressesStore$;
+  }
+  setAllAddressesStore(item: AddressItem) {
+    this.allAddressesStore.next([...this.allAddressesStore.value,item]);
+    this.launchSnackbar(address_info_saved, close_snackbar, snackbar_duration);
+  }
+
+
   launchSnackbar(msg: string, action: string, duration: number) {
     this.snackbar.open(msg, action, {
       duration,

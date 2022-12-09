@@ -1,5 +1,6 @@
 //buttons
 export const add_to_cart = 'ADD TO CART';
+export const updateCartItems = 'UPDATE CART ITEMS';
 export const add_to_wishlist = 'ADD TO WISHLIST';
 export const remove_item = 'REMOVE ITEM';
 export const explore_more_products = 'EXPLORE MORE PRODUCTS';
@@ -23,6 +24,10 @@ export const delete_account = 'DELETE ACCOUNT';
 export const addNewAddress = 'ADD NEW ADDRESS';
 export const showSavedAddress = 'SHOW SAVED ADDRESSES';
 export const confirmOrderDetails = 'CONFIRM ORDER DETAILS';
+export const updateAddressDetails = 'UPDATE ADDRESS DETAILS';
+export const updatePaymentDetails = 'UPDATE PAYMENT DETAILS';
+export const placeOrder = 'PLACE ORDER';
+
 
 
 //others
@@ -42,6 +47,7 @@ export const no_item_in_cart = 'Your shopping cart is empty!';
 export const no_order_history = "You haven't shopped with us yet!";
 export const no_search_results = "Sorry, no products match your search criteria!!"
 export const itemAddedToWishlistOn = 'Item added on ';
+export const itemsOrdered = 'Items Ordered';
 
 //headers
 export const product_details = 'PRODUCT DETAILS';
@@ -55,3 +61,4 @@ export const orders_summary = 'ORDERS SUMMARY';
 export const your_wishlist = 'YOUR WISHLIST';
 export const your_profile = 'YOUR PROFILE';
 export const checkoutInformation = 'CHECKOUT';
+export const orderConfirmation = 'CONFIRM ORDER DETAILS';

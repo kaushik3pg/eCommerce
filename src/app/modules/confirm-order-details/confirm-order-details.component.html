@@ -1,1 +1,95 @@
-<p>confirm-order-details works!</p>
+<div
+  class="flex flex-col items-center p-4 w-full h-screen"
+>
+  <h1>{{ pageHeading }}</h1>
+  <div class="flex flex-row w-full">
+    <div
+      class="flex flex-row m-2 w-2/3 "
+    >
+      <div class="flex flex-col justify-evenly items-center">
+        <mat-card class="example-card my-2">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>Saved Address</mat-card-title>
+              <mat-card-subtitle
+                >Address #{{ selectedAddress.id }}</mat-card-subtitle
+              >
+              <img
+                mat-card-sm-image
+                src="https://i.pinimg.com/originals/b5/a1/89/b5a18995ecb528c9d58a3bb60a34f410.png"
+              />
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            {{ selectedAddress.house }} - {{ selectedAddress.street }},
+            {{ selectedAddress.area || 'area' }}, {{ selectedAddress.city || 'city'}},
+            {{ selectedAddress.state  || 'state' }},
+          </mat-card-content>
+          {{ selectedAddress.pincode || '24003' }}
+        </mat-card>
+        <mat-card class="example-card my-2">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>Saved Payment</mat-card-title>
+              <mat-card-subtitle>{{
+                selectedPayment.cardHolderName || "Your Name"
+              }}</mat-card-subtitle>
+              <img
+                mat-card-sm-image
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbEe2zxGgHbNl6jX-mEccTXn3hio0heggLog&usqp=CAU"
+            /></mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            {{ selectedPayment.cardNumber || "0000 0000 0000 0000" }}
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <ul class="flex flex-col flex-1 justify-center items-center w-full">
+        <h2>{{orderedItemsHeading}}</h2>
+        <li *ngFor="let item of cartItems; index as i" class="p-2 w-full flex flex-col justify-center items-center">
+
+          <mat-card class="example-card w-[100%]" (click)="onProductCardClickNavigateTo(item.id)">
+            <mat-card-header>
+              <mat-card-title-group>
+                <img mat-card-sm-image [src]="item.imgUrl" [alt]="item.title" >
+                <mat-card-title>{{ item.title }}</mat-card-title>
+                <mat-card-subtitle>{{ item.price | currency }} * {{ item.quantity }} = {{ item.price * item.quantity | currency }}</mat-card-subtitle>
+               
+              </mat-card-title-group>
+            </mat-card-header>
+          </mat-card>
+        </li>
+      </ul>
+
+    </div>
+    <div class="flex flex-col w-1/3">
+      <button
+        class="w-full my-2 border-2 border-gray-200 py-2 shadow-md"
+        (click)="onViewCart()"
+      >
+        {{ viewCartBtn }}
+      </button>
+      <button
+        class="w-full my-2 border-2 border-gray-200 py-2 shadow-md"
+        (click)="onUpdateAddress()"
+      >
+        {{ updateAddressBtn }}
+      </button>
+      <button
+        class="w-full my-2 border-2 border-gray-200 py-2 shadow-md"
+        (click)="onUpdatePayment()"
+      >
+        {{ updatePaymentBtn }}
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="w-full my-2"
+        (click)="onProceed()"
+      >
+        {{ proceedBtn }}
+      </button>
+    </div>
+  </div>
+</div>

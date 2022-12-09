@@ -1,6 +1,33 @@
 <div class="flex flex-col justify-center items-center m-4">
   <h1>{{pageHeading}}</h1>
-  <div class="flex flex-col w-full" *ngIf="products.length">
+  <div class="flex flex-col w-full" *ngIf="previousOrders.length">
+    <ul class="flex flex-row flex-wrap justify-start">
+      <li *ngFor="let order of previousOrders; index as i" class="m-2">
+        <p>{{order.date}}</p>
+        <!-- <mat-card class="w-[300px] cursor-pointer" (click)="onProductCardClickNavigateTo(order.id)">
+          <mat-card-header>
+            <mat-card-title>{{ order.title }}</mat-card-title>
+            <mat-card-subtitle>{{ order.category }}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="order.imgUrl" [alt]="order.title" />
+          <mat-card-content>
+            <h2>{{ order.price | currency }}</h2>
+            <p>
+              <em>{{ info }}</em
+              >{{order.date}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="secondaryAction($event, order)">
+              {{ secondaryBtnLabel }}
+            </button>
+            <button id="primary" mat-button color="primary" (click)="primaryAction($event, order)">
+              {{ primaryBtnLabel }}
+            </button>
+          </mat-card-actions>
+        </mat-card> -->
+      </li>
+    </ul>
     <!-- <app-product-list
       class="w-full"
       [products]="products"
@@ -13,7 +40,7 @@
   </div>
   <div
     class="flex flex-col justify-center items-center mt-36"
-    *ngIf="!products.length"
+    *ngIf="!previousOrders.length"
   >
     <p>{{noOrderHistoryMsg}}</p>
     <button mat-raised-button color="primary" (click)="onContinueShopping()">

@@ -48,6 +48,7 @@ export const no_order_history = "You haven't shopped with us yet!";
 export const no_search_results = "Sorry, no products match your search criteria!!"
 export const itemAddedToWishlistOn = 'Item added on ';
 export const itemsOrdered = 'Items Ordered';
+export const orderPlaced = 'ORDER PLACED';
 
 //headers
 export const product_details = 'PRODUCT DETAILS';

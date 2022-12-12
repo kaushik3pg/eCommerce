@@ -52,7 +52,7 @@ export class CardComponent implements OnInit {
   }
 
   onCheckProductExistInWishlist(id: number) {
-    return this.wishlist.filter((item) => item.id === id).length ? true : false;
+    return this.wishlist.filter((item) => item.id === id).length > 0;
   }
 
   onProductCardClickNavigateTo(id: number){

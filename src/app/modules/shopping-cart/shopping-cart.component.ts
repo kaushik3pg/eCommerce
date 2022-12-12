@@ -5,7 +5,7 @@ import { AddToWishlistService } from 'src/app/services/add-to-wishlist.service';
 import {
   cart_summary,
   remove_item,
-  pay,
+  proceedToCheckout,
   invoice,
   add_to_wishlist,
   continue_shopping,
@@ -43,7 +43,7 @@ export class ShoppingCartComponent implements OnInit {
   pageHeading = cart_summary;
   primaryBtn = add_to_wishlist;
   secondaryBtn = remove_item;
-  payBtn = pay;
+  proceedBtn = proceedToCheckout;
   invoiceHeading = invoice;
   continueBtn = continue_shopping;
   noItemMsg = no_item_in_cart;
@@ -71,18 +71,21 @@ export class ShoppingCartComponent implements OnInit {
     this.router.navigate(['home']);
   }
 
-  onRemoveItemFromCart(event:any, index: number) {
+  onRemoveItemFromCart(event: any, index: number) {
     event.stopPropagation();
     this.cartStore.updateCartStore(index);
   }
 
-  onAddItemToWishlist(event:any, item: CartItem) {
+  onAddItemToWishlist(event: any, item: CartItem) {
     event.stopPropagation();
     this.wishStore.setWishStore({ ...item, date: currentDate });
   }
 
   onProductCardClickNavigateTo(id: number) {
     this.router.navigate(['product', id]);
+  }
+  onProceed(){
+    this.router.navigate(['checkout']);
   }
 
   ngOnInit(): void {

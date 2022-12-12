@@ -63,6 +63,10 @@ export class AddToCartService {
     this.cartStore.next(itemToBeRemoved);
   }
 
+  deleteCartStore(){
+    this.cartStore.next([]);
+  }
+
   launchSnackbar(msg: string, action: string, duration: number) {
     this.snackbar.open(msg, action, {
       duration,

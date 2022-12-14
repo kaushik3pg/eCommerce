@@ -14,9 +14,12 @@ export class SigninComponent implements OnInit {
   };
   constructor(private router: Router, private validateLogin: ValidateLoginService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    localStorage.removeItem('email');
+  }
 
   onSignin() {
+    localStorage.setItem('email', this.user.email);
     this.validateLogin.setLoginStatus(true);
     this.router.navigate(['']);
   }

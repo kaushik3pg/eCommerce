@@ -5,6 +5,7 @@ import { OrdersRoutingModule } from './orders-routing.module';
 import { OrdersComponent } from './orders.component';
 import { ProductListModule } from 'src/app/shared/product-list/product-list.module';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     CommonModule,
-    OrdersRoutingModule, ProductListModule, MatButtonModule
+    OrdersRoutingModule, ProductListModule, MatButtonModule, MatCardModule
   ]
 })
 export class OrdersModule { }

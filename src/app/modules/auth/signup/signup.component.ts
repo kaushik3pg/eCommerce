@@ -8,6 +8,7 @@ import {
   AbstractControl,
   ValidationErrors,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 const matchPassword = (): ValidatorFn => {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -22,7 +23,7 @@ const matchPassword = (): ValidatorFn => {
 })
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   createForm() {
     this.signupForm = this.fb.group({
@@ -58,6 +59,11 @@ export class SignupComponent implements OnInit {
       return 'pass not matcha';
     } else return null;
   }
+  onSignup(){
+    localStorage.setItem('email', this.signupForm.get('email')?.value);
+    this.router.navigate(['']);
+  }
+
   ngOnInit(): void {
     this.createForm();
   }

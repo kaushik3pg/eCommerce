@@ -11,7 +11,9 @@ const routes: Routes = [
   {
     path: 'electronics',
     loadChildren: () =>
-      import('./modules/electronics/electronics.module').then((m) => m.ElectronicsModule),
+      import('./modules/electronics/electronics.module').then(
+        (m) => m.ElectronicsModule
+      ),
   },
   {
     path: 'watches',
@@ -21,18 +23,21 @@ const routes: Routes = [
   {
     path: 'appliances',
     loadChildren: () =>
-      import('./modules/appliances/appliances.module').then((m) => m.AppliancesModule),
+      import('./modules/appliances/appliances.module').then(
+        (m) => m.AppliancesModule
+      ),
   },
   {
     path: 'furniture',
     loadChildren: () =>
-      import('./modules/furniture/furniture.module').then((m) => m.FurnitureModule),
+      import('./modules/furniture/furniture.module').then(
+        (m) => m.FurnitureModule
+      ),
   },
   {
     path: 'profile',
     loadChildren: () =>
       import('./modules/profile/profile.module').then((m) => m.ProfileModule),
-
   },
   {
     path: 'wishlist',
@@ -52,11 +57,14 @@ const routes: Routes = [
     path: 'checkout',
     loadChildren: () =>
       import('./modules/payment/payment.module').then((m) => m.PaymentModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'product/:id',
     loadChildren: () =>
-      import('./modules/product-details/product-details.module').then((m) => m.ProductDetailsModule),
+      import('./modules/product-details/product-details.module').then(
+        (m) => m.ProductDetailsModule
+      ),
   },
   {
     path: 'auth',
@@ -67,13 +75,23 @@ const routes: Routes = [
     path: 'orders',
     loadChildren: () =>
       import('./modules/orders/orders.module').then((m) => m.OrdersModule),
+      canActivate: [AuthGuard]
   },
   {
     path: 'search-results',
     loadChildren: () =>
-      import('./modules/search-results/search-results.module').then((m) => m.SearchResultsModule),
+      import('./modules/search-results/search-results.module').then(
+        (m) => m.SearchResultsModule
+      ),
   },
-  { path: 'confirm-order-details', loadChildren: () => import('./modules/confirm-order-details/confirm-order-details.module').then(m => m.ConfirmOrderDetailsModule) },
+  {
+    path: 'confirm-order-details',
+    loadChildren: () =>
+      import(
+        './modules/confirm-order-details/confirm-order-details.module'
+      ).then((m) => m.ConfirmOrderDetailsModule),
+      canActivate: [AuthGuard]
+  },
   {
     path: '**',
     redirectTo: '',

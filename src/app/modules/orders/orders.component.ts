@@ -3,8 +3,18 @@ import { Router } from '@angular/router';
 import { productList } from 'src/app/data/products';
 import { CreateOrderHistoryService } from 'src/app/services/create-order-history.service';
 import {orders_summary, continue_shopping, no_order_history} from './../../data/constants'
+export interface CartItem {
+  id: number;
+  imgUrl: string;
+  category: string;
+  title: string;
+  price: number;
+  reviews: number;
+  avgrating: number;
+  quantity: number;
+}
 export interface Order {
-  cart: {}[],
+  cart: CartItem[],
   date : string,
  }
 @Component({

@@ -2,10 +2,10 @@
   <li *ngFor="let product of products; index as i" class="m-2">
     <mat-card class="w-[300px] cursor-pointer" (click)="onProductCardClickNavigateTo(product.id)">
       <mat-card-header>
-        <mat-card-title>{{ product.title }}</mat-card-title>
+        <mat-card-title class="h-[50px]">{{ product.title }}</mat-card-title>
         <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="product.imgUrl" [alt]="product.title" />
+      <img mat-card-image [src]="product.imgUrl" [alt]="product.title"  class="min-h-[300px] max-h-[300px]"/>
       <mat-card-content>
         <h2>{{ product.price | currency }}</h2>
         <p>

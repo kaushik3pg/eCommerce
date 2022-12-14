@@ -9,9 +9,18 @@ import {
 } from '../data/constants';
 import { Router } from '@angular/router';
 import { AddToCartService } from './add-to-cart.service';
-
+export interface CartItem {
+  id: number;
+  imgUrl: string;
+  category: string;
+  title: string;
+  price: number;
+  reviews: number;
+  avgrating: number;
+  quantity: number;
+}
 export interface Order {
- cart: {}[],
+ cart: CartItem[],
  date : string,
 }
 
